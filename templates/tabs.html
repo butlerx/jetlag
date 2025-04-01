@@ -1,0 +1,32 @@
+<style>
+  .tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  .tab {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    margin-right: 5px;
+  }
+  .tab.active {
+    background-color: #fff;
+    border-color: #ddd;
+    border-bottom-color: #fff;
+    margin-bottom: -1px;
+  }
+  .tab:hover:not(.active) {
+    background-color: #f0f0f0;
+  }
+</style>
+<div class="tabs">
+  <div class="tab active" data-page="0">1. Matching</div>
+  <div class="tab" data-page="1">2. Measuring</div>
+  <div class="tab" data-page="2">3. Thermo</div>
+  <div class="tab" data-page="3">4. Radar</div>
+  <div class="tab" data-page="4">5. Tentacles</div>
+  <div class="tab" data-page="5">6. Photographic</div>
+</div>

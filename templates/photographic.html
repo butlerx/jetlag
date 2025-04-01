@@ -1,0 +1,33 @@
+<style>
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .photo-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    text-align: center;
+  }
+</style>
+
+<div class="game-header">
+  <div class="game-title">6. PHOTOGRAPHIC</div>
+  <div class="game-info">
+    <span>COST: DRAW 3, PICK 1</span>
+    <span>TIME: 5 MINUTES</span>
+  </div>
+</div>
+
+<div class="game-question">Can you see a _______ from where you are?</div>
+
+<div class="photo-grid">
+  <div class="photo-item">
+    <div class="item-label">Building with more than 10 floors</div>
+    <div class="item-input">
+      <input type="text" placeholder="Notes" id="photo-building" />
+    </div>
+  </div>
+</div>
