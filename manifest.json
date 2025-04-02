@@ -1,0 +1,16 @@
+{
+  "name": "Jet Lag: The Game Notebook",
+  "short_name": "JetLag Game",
+  "description": "A Notebook for playing Jet Lag: The Game",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#e7e7e7",
+  "theme_color": "#233041",
+  "icons": [
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ]
+}

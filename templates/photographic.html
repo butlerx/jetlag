@@ -1,33 +1,175 @@
 <style>
-  .photo-grid {
+  .photo-options {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    margin-bottom: 15px;
   }
-  .photo-item {
-    border: 1px solid #ddd;
+
+  .photo-option {
+    position: relative;
+    border: 1px solid rgba(35, 48, 65, 0.2);
     padding: 10px;
     border-radius: 4px;
-    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .photo-option:hover {
+    background-color: rgba(35, 48, 65, 0.05);
+  }
+
+  .photo-option input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .photo-option label {
+    display: block;
+    width: 100%;
+    cursor: pointer;
     text-align: center;
+  }
+
+  .photo-option input[type='checkbox']:checked + label {
+    font-weight: bold;
+  }
+
+  .photo-option input[type='checkbox']:checked ~ .photo-option {
+    background-color: #233041;
+    border-color: #233041;
+    color: white;
   }
 </style>
 
 <div class="game-header">
-  <div class="game-title">6. PHOTOGRAPHIC</div>
+  <div class="game-title">PHOTOS</div>
   <div class="game-info">
-    <span>COST: DRAW 3, PICK 1</span>
-    <span>TIME: 5 MINUTES</span>
+    <span>COST: DRAW 1</span>
+    <span>TIME: S/M: 10 MIN | L: 20 MIN</span>
   </div>
 </div>
 
-<div class="game-question">Can you see a _______ from where you are?</div>
+<div class="game-question">
+  Send a photo of <span class="highlight">Subject</span>
+</div>
 
-<div class="photo-grid">
-  <div class="photo-item">
-    <div class="item-label">Building with more than 10 floors</div>
-    <div class="item-input">
-      <input type="text" placeholder="Notes" id="photo-building" />
+<div class="category">
+  <div class="category-title">ALL GAMES:</div>
+
+  <div class="photo-options">
+    <div class="photo-option">
+      <input type="checkbox" id="tree" name="photo-subject" />
+      <label for="tree">A Tree</label>
+    </div>
+
+    <div class="photo-option">
+      <input type="checkbox" id="sky" name="photo-subject" />
+      <label for="sky">The Sky</label>
+    </div>
+
+    <div class="photo-option">
+      <input type="checkbox" id="you" name="photo-subject" />
+      <label for="you">You</label>
+    </div>
+
+    <div class="photo-option">
+      <input type="checkbox" id="widest-street" name="photo-subject" />
+      <label for="widest-street">Widest Street</label>
+    </div>
+
+    <div class="photo-option">
+      <input type="checkbox" id="tallest-structure" name="photo-subject" />
+      <label for="tallest-structure">Tallest Structure in Your Sightline</label>
+    </div>
+
+    <div class="photo-option">
+      <input type="checkbox" id="building-from-station" name="photo-subject" />
+      <label for="building-from-station"
+        >Any Building Visible from Station</label
+      >
+    </div>
+  </div>
+</div>
+
+<div class="category">
+  <div class="category-title">ADD FOR MEDIUM & LARGE:</div>
+
+  <div class="photo-options">
+    <div class="photo-option">
+      <input
+        type="checkbox"
+        id="tallest-building-from-station"
+        name="photo-subject"
+      />
+      <label for="tallest-building-from-station"
+        >Tallest Building Visible from Station</label
+      >
+    </div>
+
+    <div class="photo-option">
+      <input type="checkbox" id="trace-street" name="photo-subject" />
+      <label for="trace-street">Trace Nearest Street/Path</label>
+    </div>
+
+    <div class="photo-option">
+      <input type="checkbox" id="two-buildings" name="photo-subject" />
+      <label for="two-buildings">Two Buildings</label>
+    </div>
+
+    <div class="photo-option">
+      <input type="checkbox" id="restaurant-interior" name="photo-subject" />
+      <label for="restaurant-interior">Restaurant Interior</label>
+    </div>
+
+    <div class="photo-option">
+      <input type="checkbox" id="train-platform" name="photo-subject" />
+      <label for="train-platform">Train Platform</label>
+    </div>
+
+    <div class="photo-option">
+      <input type="checkbox" id="park" name="photo-subject" />
+      <label for="park">Park</label>
+    </div>
+
+    <div class="photo-option">
+      <input type="checkbox" id="grocery-store" name="photo-subject" />
+      <label for="grocery-store">Grocery Store Aisle</label>
+    </div>
+
+    <div class="photo-option">
+      <input type="checkbox" id="place-of-worship" name="photo-subject" />
+      <label for="place-of-worship">Place of Worship</label>
+    </div>
+  </div>
+</div>
+
+<div class="category">
+  <div class="category-title">ADD FOR LARGE:</div>
+
+  <div class="photo-options">
+    <div class="photo-option">
+      <input type="checkbox" id="streets-traced" name="photo-subject" />
+      <label for="streets-traced">½ Mile of Streets Traced</label>
+    </div>
+
+    <div class="photo-option">
+      <input type="checkbox" id="tallest-mountain" name="photo-subject" />
+      <label for="tallest-mountain"
+        >Tallest Mountain Visible from Station</label
+      >
+    </div>
+
+    <div class="photo-option">
+      <input type="checkbox" id="body-of-water" name="photo-subject" />
+      <label for="body-of-water">Biggest Body of Water in Your Zone</label>
+    </div>
+
+    <div class="photo-option">
+      <input type="checkbox" id="five-buildings" name="photo-subject" />
+      <label for="five-buildings">Five Buildings</label>
     </div>
   </div>
 </div>

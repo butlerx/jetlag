@@ -1,11 +1,23 @@
 import { fetchTemplate } from '../fetch.js';
 
+function currentPage() {
+  const hash = window.location.hash.substring(1);
+  return hash === '' ? 'matching' : hash;
+}
+
 class GameTabs extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    fetchTemplate('tabs.html').then((html) => {
+    const hash = currentPage();
+    fetchTemplate('tabs').then((html) => {
       this.shadowRoot.innerHTML = html;
+      for (const tab of this.shadowRoot.querySelectorAll('.tab')) {
+        if (tab.dataset.page === hash) {
+          tab.classList.add('active');
+          break;
+        }
+      }
       this.addEventListeners();
     });
   }
@@ -17,7 +29,7 @@ class GameTabs extends HTMLElement {
         tab.classList.add('active');
 
         const event = new CustomEvent('tab-changed', {
-          detail: { pageNum: tab.dataset.page },
+          detail: { page: tab.dataset.page },
           bubbles: true,
           composed: true,
         });
