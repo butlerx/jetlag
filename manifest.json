@@ -1,7 +1,7 @@
 {
-  "name": "Jet Lag: The Game Notebook",
-  "short_name": "JetLag Game",
-  "description": "A Notebook for playing Jet Lag: The Game",
+  "name": "Jet Lag: The Game - Hide + Seek Investigation Book",
+  "short_name": "Hide + Seek Investigation Book",
+  "description": "An **unofficial** investigation book web app for tracking your notes and investigations while playing Jet Lag: The Game Hide and Seek home edition.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#e7e7e7",

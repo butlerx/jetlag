@@ -8,11 +8,37 @@
       name="description"
       content="A Notebook for playing Jet Lag: The Game"
     />
-    <title>Jet Lag: The Game Notebook</title>
-    <link rel="stylesheet" href="./css/main.css" type="text/css" />
+    <title>Jet Lag: The Game - Hide + Seek Investigation Book</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Jet Lag: The Game Theme */
+      :root {
+        --jetlag-primary: #e74c3c; /* Vibrant red for primary elements */
+        --jetlag-secondary: #3498db; /* Blue for secondary elements */
+        --jetlag-accent: #f1c40f; /* Yellow accent for highlights */
+        --jetlag-dark: #2c3e50; /* Dark blue/gray for backgrounds */
+        --jetlag-light: #ecf0f1; /* Light gray for text backgrounds */
+        --jetlag-text: #34495e; /* Dark gray for text */
+        --jetlag-success: #2ecc71; /* Green for success messages */
+        --jetlag-warning: #f39c12; /* Orange for warnings */
+        --jetlag-danger: #c0392b; /* Dark red for danger/errors */
+      }
+
+      body {
+        font-family: 'Montserrat', 'Roboto', sans-serif;
+        background-color: var(--jetlag-light);
+        color: var(--jetlag-text);
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+      }
+    </style>
     <link rel="canonical" href="/jetlag" />
     <link rel="manifest" href="./manifest.json" />
-    <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./app.js"></script>
     <link
       rel="shortcut icon"
       type="image/x-icon"
@@ -31,49 +57,12 @@
     <meta property="og:title" content="Notebook" />
     <meta
       property="og:description"
-      content="A Notebook for playing Jet Lag: The Game"
+      content="tn **unofficial** investigation book web app for tracking your notes and investigations while playing Jet Lag: The Game Hide and Seek home edition."
     />
     <meta property="og:locale" content="en_uk" />
     <meta property="og:type" content="webapp" />
   </head>
   <body>
-    <div class="container">
-      <h1>
-        <img
-          src="./icons/icon-128x128.png"
-          alt="Jet Lag Icon"
-          class="header-icon"
-        />
-        <span>Jet Lag: The Game Notebook</span>
-      </h1>
-
-      <game-tabs></game-tabs>
-      <game-content></game-content>
-
-      <div class="nav-buttons">
-        <button id="clearStorage">Clear Game</button>
-      </div>
-    </div>
-
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker
-            .register('./js/sw.js')
-            .then((registration) => {
-              if (registration.installing) {
-                console.log('Service worker installing');
-              } else if (registration.waiting) {
-                console.log('Service worker installed');
-              } else if (registration.active) {
-                console.log('Service worker active');
-              }
-            })
-            .catch((error) =>
-              console.error('Service Worker registration failed:', error),
-            );
-        });
-      }
-    </script>
+    <jetlag-the-game />
   </body>
 </html>
