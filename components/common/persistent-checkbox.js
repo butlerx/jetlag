@@ -35,7 +35,7 @@ class PersistentCheckbox extends LitElement {
     }
 
     .checked {
-      border-color: var(--jetlag-primary);
+      border-color: var(--jetlag-success);
       box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3);
       font-weight: bold;
     }

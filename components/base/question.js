@@ -17,7 +17,6 @@ export class QuestionElement extends LitElement {
 
     .game-page:hover {
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-      transform: translateY(-5px);
     }
 
     .game-header {
