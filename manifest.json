@@ -2,7 +2,7 @@
   "name": "Jet Lag: The Game - Hide + Seek Investigation Book",
   "short_name": "Hide + Seek Investigation Book",
   "description": "An unofficial investigation book web app for tracking your notes and investigations while playing 'Jet Lag: The Game - Hide + Seek' home edition.",
-  "start_url": "/",
+  "start_url": "/jetlag",
   "display": "standalone",
   "background_color": "#e7e7e7",
   "theme_color": "#233041",
