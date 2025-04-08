@@ -5,6 +5,7 @@ class PersistentInputCustomLabel extends LitElement {
     id: { type: String, reflect: true },
     value: { type: String },
     labelValue: { type: String },
+    label: { type: String },
   };
 
   static styles = css`
@@ -105,7 +106,7 @@ class PersistentInputCustomLabel extends LitElement {
           class="label-input"
           id="${this.labelStorageKey}"
           type="text"
-          placeholder="CHOOSE"
+          placeholder="${this.label || 'Label'}"
           .value=${this.labelValue}
           @input=${this.handleLabelInput}
         />

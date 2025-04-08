@@ -48,30 +48,30 @@ class PhotosMode extends QuestionElement {
           <div class="category-title">ALL GAMES:</div>
           <div class="photo-options">
             <persistent-checkbox id="photos-tree">
-              A Tree
+              🌳 A Tree
               <div class="subtext">Must include the entire tree.</div>
             </persistent-checkbox>
             <persistent-checkbox id="photos-sky">
-              The Sky
+              ☁️ The Sky
               <div class="subtext">Place phone on ground, shoot directly up.</div>
             </persistent-checkbox>
             <persistent-checkbox id="photos-you">
-              You
+              🤳 You
               <div class="subtext">Selfie mode. Arm parallel to the ground, fully extended.</div>
             </persistent-checkbox>
             <persistent-checkbox id="photos-widest-street">
-              Widest Street
+              🛣️ Widest Street
               <div class="subtext">Must include both sides of the street.</div>
             </persistent-checkbox>
             <persistent-checkbox id="photos-tallest-structure">
-              Tallest Structure in Your Sightline
+              🏙️ Tallest Structure in Your Sightline
               <div class="subtext">
                 Tallest from your current perspective/sightline. Must include top and both sides.
                 The top must be in the top ½ of the frame.
               </div>
             </persistent-checkbox>
             <persistent-checkbox id="photos-building-from-station">
-              Any Building Visible from Station
+              🚉 Any Building Visible from Station
               <div class="subtext">
                 Must stand directly outside transit station entrance. If multiple entrances, you may
                 choose. Must include roof, both sides, with the top of building in top ½ of the
@@ -85,7 +85,7 @@ class PhotosMode extends QuestionElement {
           <div class="category-title">ADD FOR MEDIUM & LARGE:</div>
           <div class="photo-options">
             <persistent-checkbox id="photos-tallest-building-from-station">
-              Tallest Building Visible from Station
+              🏢 Tallest Building Visible from Station
               <div class="subtext">
                 Tallest from your perspective/sightline. Must stand directly outside transit station
                 entrance. If multiple entrances, you may choose. Must include roof, both sides, with
@@ -93,41 +93,41 @@ class PhotosMode extends QuestionElement {
               </div>
             </persistent-checkbox>
             <persistent-checkbox id="photos-trace-street">
-              Trace Nearest Street/Path
+              🗺️ Trace Nearest Street/Path
               <div class="subtext">
                 Street/path must be visible on mapping app. Trace intersection to intersection.
               </div>
             </persistent-checkbox>
             <persistent-checkbox id="photos-two-buildings">
-              Two Buildings
+              🏘️ Two Buildings
               <div class="subtext">Must include bottom and up to four stories.</div>
             </persistent-checkbox>
             <persistent-checkbox id="photos-restaurant-interior">
-              Restaurant Interior
+              🍽️ Restaurant Interior
               <div class="subtext">
                 No zoom. Must take the picture through the window from outside the restaurant.
               </div>
             </persistent-checkbox>
             <persistent-checkbox id="photos-train-platform">
-              Train Platform
+              🚆 Train Platform
               <div class="subtext">
                 Must include a 5' x 5' section with three distinct elements.
               </div>
             </persistent-checkbox>
             <persistent-checkbox id="photos-park">
-              Park
+              🌲 Park
               <div class="subtext">
                 No zoom, phone perpendicular to ground. Must stand 5' from any obstruction.
               </div>
             </persistent-checkbox>
             <persistent-checkbox id="photos-grocery-store">
-              Grocery Store Aisle
+              🛒 Grocery Store Aisle
               <div class="subtext">
                 No zoom. Stand at the end of the aisle, shoot directly down.
               </div>
             </persistent-checkbox>
             <persistent-checkbox id="photos-place-of-worship">
-              Place of Worship
+              🏛️ Place of Worship
               <div class="subtext">
                 Must include a 5' x 5' section with three distinct elements.
               </div>
@@ -139,27 +139,27 @@ class PhotosMode extends QuestionElement {
           <div class="category-title">ADD FOR LARGE:</div>
           <div class="photo-options">
             <persistent-checkbox id="photos-streets-traced">
-              ½ Mile of Streets Traced
+              🗺️ ½ Mile of Streets Traced
               <div class="subtext">
                 Must be continuous, including 5 turns, no doubling back. Send N-S oriented. Streets
                 must appear on mapping app.
               </div>
             </persistent-checkbox>
             <persistent-checkbox id="photos-tallest-mountain">
-              Tallest Mountain Visible from Station
+              ⛰️ Tallest Mountain Visible from Station
               <div class="subtext">
                 Tallest from your perspective/sightline. Max 3x zoom. Top of mountain must be in top
                 ½ of frame.
               </div>
             </persistent-checkbox>
             <persistent-checkbox id="photos-body-of-water">
-              Biggest Body of Water in Your Zone
+              💧 Biggest Body of Water in Your Zone
               <div class="subtext">
                 Max 3x zoom. Must include either both sides of body of water or the horizon.
               </div>
             </persistent-checkbox>
             <persistent-checkbox id="photos-five-buildings">
-              Five Buildings
+              🏙️ Five Buildings
               <div class="subtext">Must include bottom and up to four stories.</div>
             </persistent-checkbox>
           </div>

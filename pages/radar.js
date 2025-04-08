@@ -16,16 +16,16 @@ class RadarMode extends QuestionElement {
 
         <div class="category">
           <div class="category-title">ALL GAMES</div>
-          <persistent-input id="radar-quarter-mile">¼ Mile</persistent-input>
-          <persistent-input id="radar-half-mile">½ Mile</persistent-input>
-          <persistent-input id="radar-one-mile">1 Mile</persistent-input>
-          <persistent-input id="radar-three-miles">3 Miles</persistent-input>
-          <persistent-input id="radar-five-miles">5 Miles</persistent-input>
-          <persistent-input id="radar-ten-miles">10 Miles</persistent-input>
-          <persistent-input id="radar-twenty-five-miles">25 Miles</persistent-input>
-          <persistent-input id="radar-fifty-miles">50 Miles</persistent-input>
-          <persistent-input id="radar-hundred-miles">100 Miles</persistent-input>
-          <persistent-input-custom-label id="radar-choose"></persistent-input-custom-label>
+          <persistent-input id="radar-quarter-mile">📍 ¼ Mile</persistent-input>
+          <persistent-input id="radar-half-mile">📍 ½ Mile</persistent-input>
+          <persistent-input id="radar-one-mile">📍 1 Mile</persistent-input>
+          <persistent-input id="radar-three-miles">📍 3 Miles</persistent-input>
+          <persistent-input id="radar-five-miles">📍 5 Miles</persistent-input>
+          <persistent-input id="radar-ten-miles">🔍 10 Miles</persistent-input>
+          <persistent-input id="radar-twenty-five-miles">🔍 25 Miles</persistent-input>
+          <persistent-input id="radar-fifty-miles">🌐 50 Miles</persistent-input>
+          <persistent-input id="radar-hundred-miles">🌐 100 Miles</persistent-input>
+          <persistent-input-custom-label id="radar-choose" label="🎯CHOOSE" />
         </div>
       </div>
     `;
