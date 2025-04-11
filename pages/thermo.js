@@ -1,5 +1,5 @@
 import { html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
-import { QuestionElement } from '../components/base/question.js';
+import { QuestionElement } from '../components/base/question-element.js';
 
 class ThermometerMode extends QuestionElement {
   render() {
@@ -18,18 +18,18 @@ class ThermometerMode extends QuestionElement {
 
         <div class="category">
           <div class="category-title">ALL GAMES</div>
-          <persistent-input id="thermometer-half-mile">🔥 ½ Mile</persistent-input>
-          <persistent-input id="thermometer-three-miles">🔥 3 Miles</persistent-input>
+          <persistent-input id="thermometer.half-mile">🔥 ½ Mile</persistent-input>
+          <persistent-input id="thermometer.three-miles">🔥 3 Miles</persistent-input>
         </div>
 
         <div class="category">
           <div class="category-title">ADD FOR MEDIUM & LARGE</div>
-          <persistent-input id="thermometer-ten-miles">🌡️ 10 Miles</persistent-input>
+          <persistent-input id="thermometer.ten-miles">🌡️ 10 Miles</persistent-input>
         </div>
 
         <div class="category">
           <div class="category-title">ADD FOR LARGE</div>
-          <persistent-input id="thermometer-fifty-miles">❄️ 50 Miles</persistent-input>
+          <persistent-input id="thermometer.fifty-miles">❄️ 50 Miles</persistent-input>
         </div>
       </div>
     `;

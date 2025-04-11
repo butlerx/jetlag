@@ -1,11 +1,7 @@
-import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { LocalStorageElement } from '../base/local-storage-element.js';
 
-class PersistentInput extends LitElement {
-  static properties = {
-    id: { type: String, reflect: true },
-    value: { type: String },
-  };
-
+class PersistentInput extends LocalStorageElement {
   static styles = css`
     .item-row {
       align-items: center;
@@ -60,29 +56,8 @@ class PersistentInput extends LitElement {
     }
   `;
 
-  constructor() {
-    super();
-    this.value = '';
-  }
-
-  get storageKey() {
-    if (!this.id) {
-      throw new Error('PersistentInput requires an id attribute');
-    }
-    return `gameNotes_${this.id}`;
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    const savedValue = localStorage.getItem(this.storageKey);
-    if (savedValue) {
-      this.value = savedValue;
-    }
-  }
-
   handleInput(e) {
-    this.value = e.target.value;
-    localStorage.setItem(this.storageKey, this.value);
+    this.storedValue = e.target.value;
   }
 
   render() {
@@ -93,7 +68,7 @@ class PersistentInput extends LitElement {
           id="${this.storageKey}"
           type="text"
           placeholder="Notes"
-          .value=${this.value}
+          .value=${this.storedValue}
           @input=${this.handleInput}
         />
       </div>

@@ -1,5 +1,5 @@
 import { html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
-import { QuestionElement } from '../components/base/question.js';
+import { QuestionElement } from '../components/base/question-element.js';
 
 class TentaclesMode extends QuestionElement {
   render() {
@@ -20,18 +20,18 @@ class TentaclesMode extends QuestionElement {
 
         <div class="category">
           <div class="category-title">MEDIUM & LARGE GAMES: <span>1 MILE</span></div>
-          <persistent-input id="tentacles-museums">🏛️ Museums</persistent-input>
-          <persistent-input id="tentacles-libraries">📚 Libraries</persistent-input>
-          <persistent-input id="tentacles-movie-theaters">🎬 Movie Theaters</persistent-input>
-          <persistent-input id="tentacles-hospitals">🏥 Hospitals</persistent-input>
+          <persistent-input id="tentacles.museums">🏛️ Museums</persistent-input>
+          <persistent-input id="tentacles.libraries">📚 Libraries</persistent-input>
+          <persistent-input id="tentacles.movie-theaters">🎬 Movie Theaters</persistent-input>
+          <persistent-input id="tentacles.hospitals">🏥 Hospitals</persistent-input>
         </div>
 
         <div class="category">
           <div class="category-title">LARGE GAMES ONLY: <span>15 MILES</span></div>
-          <persistent-input id="tentacles-metro-lines">🚇 Metro Lines</persistent-input>
-          <persistent-input id="tentacles-zoos">🦁 Zoos</persistent-input>
-          <persistent-input id="tentacles-aquariums">🐠 Aquariums</persistent-input>
-          <persistent-input id="tentacles-amusement-parks">🎢 Amusement Parks</persistent-input>
+          <persistent-input id="tentacles.metro-lines">🚇 Metro Lines</persistent-input>
+          <persistent-input id="tentacles.zoos">🦁 Zoos</persistent-input>
+          <persistent-input id="tentacles.aquariums">🐠 Aquariums</persistent-input>
+          <persistent-input id="tentacles.amusement-parks">🎢 Amusement Parks</persistent-input>
         </div>
       </div>
     `;

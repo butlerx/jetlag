@@ -1,8 +1,9 @@
-import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { LocalStorageElement } from '../base/local-storage-element.js';
 
-class PersistentCheckbox extends LitElement {
+class PersistentCheckbox extends LocalStorageElement {
   static properties = {
-    id: { type: String, reflect: true },
+    ...LocalStorageElement.properties,
     checked: { type: Boolean },
   };
 
@@ -46,24 +47,16 @@ class PersistentCheckbox extends LitElement {
     this.checked = false;
   }
 
-  get storageKey() {
-    if (!this.id) {
-      throw new Error('PersistentCheckbox requires an id attribute');
-    }
-    return `gameNotes_${this.id}`;
-  }
-
   connectedCallback() {
     super.connectedCallback();
-    const savedValue = localStorage.getItem(this.storageKey);
-    if (savedValue !== null) {
-      this.checked = savedValue === 'true';
+    if (this.storedValue !== null) {
+      this.checked = this.storedValue === 'true';
     }
   }
 
   handleToggle() {
     this.checked = !this.checked;
-    localStorage.setItem(this.storageKey, this.checked.toString());
+    this.storedValue = this.checked;
   }
 
   render() {

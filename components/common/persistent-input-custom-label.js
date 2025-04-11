@@ -1,9 +1,9 @@
-import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { LocalStorageElement } from '../base/local-storage-element.js';
 
-class PersistentInputCustomLabel extends LitElement {
+class PersistentInputCustomLabel extends LocalStorageElement {
   static properties = {
-    id: { type: String, reflect: true },
-    value: { type: String },
+    ...LocalStorageElement.properties,
     labelValue: { type: String },
     label: { type: String },
   };
@@ -61,28 +61,15 @@ class PersistentInputCustomLabel extends LitElement {
 
   constructor() {
     super();
-    this.value = '';
     this.labelValue = '';
   }
 
-  get storageKey() {
-    if (!this.id) {
-      throw new Error('PersistentInputCustomLabel requires an id attribute');
-    }
-    return `gameNotes_${this.id}`;
-  }
-
   get labelStorageKey() {
-    return `gameNotes_${this.id}_label`;
+    return `${this.storageKey}.label`;
   }
 
   connectedCallback() {
     super.connectedCallback();
-    const savedValue = localStorage.getItem(this.storageKey);
-    if (savedValue) {
-      this.value = savedValue;
-    }
-
     const savedLabelValue = localStorage.getItem(this.labelStorageKey);
     if (savedLabelValue) {
       this.labelValue = savedLabelValue;
@@ -90,8 +77,7 @@ class PersistentInputCustomLabel extends LitElement {
   }
 
   handleInput(e) {
-    this.value = e.target.value;
-    localStorage.setItem(this.storageKey, this.value);
+    this.storedValue = e.target.value;
   }
 
   handleLabelInput(e) {
@@ -115,7 +101,7 @@ class PersistentInputCustomLabel extends LitElement {
           id="${this.storageKey}"
           type="text"
           placeholder="Notes"
-          .value=${this.value}
+          .value=${this.storedValue}
           @input=${this.handleInput}
         />
       </div>
