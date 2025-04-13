@@ -1,9 +1,5 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
-
-function currentPage() {
-  const hash = window.location.hash.substring(1);
-  return hash === '' ? 'matching' : hash;
-}
+import { currentPage } from '../../utils.js';
 
 class GameContent extends LitElement {
   static styles = css`
@@ -185,12 +181,12 @@ class GameContent extends LitElement {
   }
 
   renderTabOptions() {
+    const tabClass = this.mobileMenuOpen ? 'tab-option' : 'tab';
+
     return Object.entries(this.tabs).map(
       ([id, name]) => html`
         <div
-          class="${this.mobileMenuOpen ? 'tab-option' : 'tab'} ${this.activePage === id
-            ? 'active'
-            : ''}"
+          class="${tabClass} ${this.activePage === id ? 'active' : ''}"
           @click="${() => this.#handleTabClick(id)}"
         >
           ${name}

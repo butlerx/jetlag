@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
 
 import './components/index.js';
-import './pages/index.js';
 
 class JetlagTheGame extends LitElement {
   static styles = css`

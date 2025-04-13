@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
 import { ButtonElement } from '../base/button-element.js';
+import { PREFIX } from '../../game-pages.js';
 
 class ClearButton extends ButtonElement {
   static styles = [
@@ -16,9 +17,8 @@ class ClearButton extends ButtonElement {
   ];
 
   handleClick() {
-    const prefix = 'gameNotes.';
     for (let key in localStorage) {
-      if (key.startsWith(prefix)) {
+      if (key.startsWith(PREFIX)) {
         localStorage.removeItem(key);
       }
     }

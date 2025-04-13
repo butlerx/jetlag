@@ -1,4 +1,5 @@
 import { LitElement } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { PREFIX } from '../../game-pages.js';
 
 export class LocalStorageElement extends LitElement {
   static properties = {
@@ -9,7 +10,7 @@ export class LocalStorageElement extends LitElement {
     if (!this.id) {
       throw new Error('LocalStorageElement requires an id attribute');
     }
-    return `gameNotes.${this.id}`;
+    return `${PREFIX}${this.id}`;
   }
 
   get storedValue() {

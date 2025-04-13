@@ -74,6 +74,7 @@ export class QuestionElement extends LitElement {
       color: var(--jetlag-secondary);
       font-weight: 500;
       padding: 2px 6px;
+      text-transform: uppercase;
     }
 
     .game-question span.heavy {
@@ -84,6 +85,7 @@ export class QuestionElement extends LitElement {
       color: var(--jetlag-primary);
       font-weight: 500;
       padding: 2px 6px;
+      text-transform: uppercase;
     }
 
     .category {
