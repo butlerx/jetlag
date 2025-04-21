@@ -1,6 +1,10 @@
 import { css, LitElement } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
 
 export class QuestionElement extends LitElement {
+  static properties = {
+    gameId: { type: String, reflect: true },
+  };
+
   static styles = css`
     .game-page {
       background-color: #fff;

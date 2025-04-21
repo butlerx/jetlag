@@ -1,4 +1,4 @@
-import { html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
 import { QuestionElement } from '../base/question-element.js';
 import { THERMOMETER_MODE } from '../../game-pages.js';
 
@@ -23,7 +23,9 @@ class ThermometerMode extends QuestionElement {
               <div class="category-title">${cat.title}</div>
               ${cat.fields.map(
                 (item) => html`
-                  <persistent-input id="${THERMOMETER_MODE.title}.${item.id}"
+                  <persistent-input
+                    id="${THERMOMETER_MODE.title}.${item.id}"
+                    gameId="${this.gameId}"
                     >${item.label}</persistent-input
                   >
                 `,

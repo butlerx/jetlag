@@ -52,7 +52,9 @@ class PhotosMode extends QuestionElement {
               <div class="photo-options">
                 ${cat.fields.map(
                   (item) => html`
-                    <persistent-checkbox id="${PHOTOS_MODE.title}.${item.id}"
+                    <persistent-checkbox
+                      id="${PHOTOS_MODE.title}.${item.id}"
+                      gameId="${this.gameId}"
                       >${item.label}
                       <div class="subtext">${item.description}</div>
                     </persistent-checkbox>

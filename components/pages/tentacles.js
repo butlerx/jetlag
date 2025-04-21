@@ -25,7 +25,7 @@ class TentaclesMode extends QuestionElement {
               <div class="category-title">${cat.title}: <span>${cat.distance} Miles</span></div>
               ${cat.fields.map(
                 (item) => html`
-                  <persistent-input id="${TENTACLES_MODE.title}.${item.id}"
+                  <persistent-input id="${TENTACLES_MODE.title}.${item.id}" gameId="${this.gameId}"
                     >${item.label}</persistent-input
                   >
                 `,
