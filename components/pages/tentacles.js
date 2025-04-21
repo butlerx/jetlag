@@ -1,6 +1,6 @@
 import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
-import { QuestionElement } from '../components/base/question-element.js';
-import { TENTACLES_MODE } from '../game-pages.js';
+import { QuestionElement } from '../base/question-element.js';
+import { TENTACLES_MODE } from '../../game-pages.js';
 
 class TentaclesMode extends QuestionElement {
   render() {
@@ -25,7 +25,7 @@ class TentaclesMode extends QuestionElement {
               <div class="category-title">${cat.title}: <span>${cat.distance} Miles</span></div>
               ${cat.fields.map(
                 (item) => html`
-                  <persistent-input id="${TENTACLES_MODE.title}.${item.id}"
+                  <persistent-input id="${TENTACLES_MODE.title}.${item.id}" gameId="${this.gameId}"
                     >${item.label}</persistent-input
                   >
                 `,

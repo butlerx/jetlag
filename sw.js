@@ -18,7 +18,7 @@ const urlsToCache = [
   './components/pages/radar.js',
   './components/pages/tentacles.js',
   './components/pages/thermo.js',
-  './components/specific/clear-button.js',
+  './components/specific/delete-button.js',
   './components/specific/export-button.js',
   './components/specific/game-content.js',
   './components/specific/game-header.js',

@@ -119,6 +119,7 @@ class GameContent extends LitElement {
   static properties = {
     activePage: { type: String },
     mobileMenuOpen: { type: Boolean },
+    gameId: { type: String },
   };
 
   tabs = {
@@ -198,17 +199,17 @@ class GameContent extends LitElement {
   renderPage() {
     switch (this.activePage) {
       case 'matching':
-        return html`<matching-mode></matching-mode>`;
+        return html`<matching-mode .gameId=${this.gameId}></matching-mode>`;
       case 'measuring':
-        return html`<measuring-mode></measuring-mode>`;
+        return html`<measuring-mode .gameId=${this.gameId}></measuring-mode>`;
       case 'thermo':
-        return html`<thermometer-mode></thermometer-mode>`;
+        return html`<thermometer-mode .gameId=${this.gameId}></thermometer-mode>`;
       case 'radar':
-        return html`<radar-mode></radar-mode>`;
+        return html`<radar-mode .gameId=${this.gameId}></radar-mode>`;
       case 'tentacles':
-        return html`<tentacles-mode></tentacles-mode>`;
+        return html`<tentacles-mode .gameId=${this.gameId}></tentacles-mode>`;
       case 'photographic':
-        return html`<photos-mode></photos-mode>`;
+        return html`<photos-mode .gameId=${this.gameId}></photos-mode>`;
       default:
         return html`<error-page></error-page>`;
     }

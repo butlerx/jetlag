@@ -1,6 +1,6 @@
-import { html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
-import { QuestionElement } from '../components/base/question-element.js';
-import { MATCHING_MODE } from '../game-pages.js';
+import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { QuestionElement } from '../base/question-element.js';
+import { MATCHING_MODE } from '../../game-pages.js';
 
 class MatchingMode extends QuestionElement {
   render() {
@@ -21,7 +21,7 @@ class MatchingMode extends QuestionElement {
               <div class="category-title">${cat.title}:</div>
               ${cat.fields.map(
                 (item) => html`
-                  <persistent-input id="${MATCHING_MODE.title}.${item.id}"
+                  <persistent-input id="${MATCHING_MODE.title}.${item.id}" gameId="${this.gameId}"
                     >${item.label}</persistent-input
                   >
                 `,
