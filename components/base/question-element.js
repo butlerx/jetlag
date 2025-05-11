@@ -2,7 +2,7 @@ import { css, LitElement } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit
 
 export class QuestionElement extends LitElement {
   static properties = {
-    gameId: { type: String, reflect: true },
+    gameId: { type: String, reflect: true, state: true },
   };
 
   static styles = css`

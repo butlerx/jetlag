@@ -1,7 +1,32 @@
+/**
+ * @fileoverview GameContent component for displaying different game modes and managing navigation
+ */
+
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
 import { currentPage } from '../../utils.js';
 
+/**
+ * A custom element that manages game content and navigation between different game modes
+ * @extends LitElement
+ */
 class GameContent extends LitElement {
+  /**
+   * @static
+   * @type {Object}
+   * @property {Object} activePage - The currently active game mode page
+   * @property {Object} mobileMenuOpen - Whether the mobile menu is open
+   * @property {Object} gameId - The current game ID
+   */
+  static properties = {
+    activePage: { type: String },
+    mobileMenuOpen: { type: Boolean },
+    gameId: { state: true },
+  };
+
+  /**
+   * @static
+   * @type {CSSResult}
+   */
   static styles = css`
     .tabs-container {
       margin-bottom: 20px;
@@ -116,12 +141,15 @@ class GameContent extends LitElement {
     }
   `;
 
-  static properties = {
-    activePage: { type: String },
-    mobileMenuOpen: { type: Boolean },
-    gameId: { type: String },
-  };
-
+  /**
+   * @type {Object}
+   * @property {string} matching - Matching game mode
+   * @property {string} measuring - Measuring game mode
+   * @property {string} thermo - Thermo game mode
+   * @property {string} radar - Radar game mode
+   * @property {string} tentacles - Tentacles game mode
+   * @property {string} photographic - Photographic game mode
+   */
   tabs = {
     matching: 'Matching',
     measuring: 'Measuring',
@@ -131,12 +159,19 @@ class GameContent extends LitElement {
     photographic: 'Photographic',
   };
 
+  /**
+   * Creates an instance of GameContent
+   */
   constructor() {
     super();
     this.activePage = currentPage();
     this.mobileMenuOpen = false;
   }
 
+  /**
+   * Called when the element is connected to the DOM
+   * Sets up hash change listener for navigation
+   */
   connectedCallback() {
     super.connectedCallback();
     window.addEventListener('hashchange', () => {
@@ -147,21 +182,38 @@ class GameContent extends LitElement {
     });
   }
 
+  /**
+   * Called when properties are updated
+   * Updates the URL hash when activePage changes
+   * @param {Map} changedProperties - Map of changed properties
+   */
   updated(changedProperties) {
     if (changedProperties.has('activePage')) {
       window.location.hash = this.activePage;
     }
   }
 
+  /**
+   * Handles tab click events
+   * @private
+   * @param {string} page - The page to navigate to
+   */
   #handleTabClick(page) {
     this.activePage = page;
     this.mobileMenuOpen = false;
   }
 
+  /**
+   * Toggles the mobile menu open/closed state
+   */
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 
+  /**
+   * Renders the game content component
+   * @returns {TemplateResult} The HTML template for the component
+   */
   render() {
     return html`
       <div class="tabs-container">
@@ -181,6 +233,10 @@ class GameContent extends LitElement {
     `;
   }
 
+  /**
+   * Renders the tab options for navigation
+   * @returns {TemplateResult} The HTML template for tab options
+   */
   renderTabOptions() {
     const tabClass = this.mobileMenuOpen ? 'tab-option' : 'tab';
 
@@ -196,6 +252,10 @@ class GameContent extends LitElement {
     );
   }
 
+  /**
+   * Renders the current game mode page
+   * @returns {TemplateResult} The HTML template for the current page
+   */
   renderPage() {
     switch (this.activePage) {
       case 'matching':

@@ -21,7 +21,7 @@ class MatchingMode extends QuestionElement {
               <div class="category-title">${cat.title}:</div>
               ${cat.fields.map(
                 (item) => html`
-                  <persistent-input id="${MATCHING_MODE.title}.${item.id}" gameId="${this.gameId}"
+                  <persistent-input id="${MATCHING_MODE.title}.${item.id}" .gameId="${this.gameId}"
                     >${item.label}</persistent-input
                   >
                 `,

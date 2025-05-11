@@ -1,156 +1,135 @@
+/**
+ * @fileoverview GameControls component for managing game selection and duration
+ */
+
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
 import { PREFIX } from '../../game-pages.js';
 
+/**
+ * A custom element that provides controls for selecting games and setting game duration
+ * @extends LitElement
+ */
 class GameControls extends LitElement {
+  /**
+   * @static
+   * @type {Object}
+   * @property {Object} gameId - The currently selected game ID
+   * @property {Object} gameDuration - The duration of the current game
+   * @property {Object} isSelectionModalOpen - Whether the game selection modal is open
+   */
   static properties = {
-    selectedGameId: { state: true },
+    gameId: { state: true },
     gameDuration: { state: true },
     isSelectionModalOpen: { state: true },
   };
 
+  /**
+   * @static
+   * @type {CSSResult}
+   */
   static styles = css`
-    .game-controls {
+    .controls {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      gap: 20px;
       margin-bottom: 20px;
-      gap: 15px;
-      flex-wrap: wrap;
     }
 
-    .game-controls label {
-      margin-right: 5px;
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    label {
       font-weight: 600;
-      color: var(--jetlag-text);
     }
 
-    .game-controls input,
-    .game-controls button {
-      padding: 8px 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-family: inherit;
-      font-size: 1em;
-    }
-
-    .game-controls button {
-      background-color: var(--jetlag-secondary);
+    button {
+      padding: 8px 16px;
+      background: var(--jetlag-secondary);
       color: white;
-      cursor: pointer;
       border: none;
+      border-radius: 4px;
+      cursor: pointer;
     }
 
-    .game-controls button:hover {
-      background-color: #2980b9;
-    }
-
-    .selected-game {
-      font-weight: 600;
-      color: var(--jetlag-primary);
-    }
-
-    @media (max-width: 768px) {
-      .game-controls {
-        flex-direction: column;
-        align-items: stretch;
-      }
+    input {
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
     }
   `;
 
+  /**
+   * Creates an instance of GameControls
+   */
   constructor() {
     super();
-    this.selectedGameId = '';
+    this.gameId = '';
     this.gameDuration = '';
     this.isSelectionModalOpen = false;
   }
 
-  #handleGameSelect(gameId) {
-    this.selectedGameId = gameId;
+  /**
+   * Handles game selection from the modal
+   * @private
+   * @param {CustomEvent} e - The game selected event
+   */
+  #handleGameSelect = (e) => {
+    this.gameId = e.detail.gameId;
+    this.isSelectionModalOpen = false;
     this.dispatchEvent(
       new CustomEvent('game-selected', {
-        detail: { gameId },
+        detail: { gameId: this.gameId },
         bubbles: true,
         composed: true,
       }),
     );
-  }
+  };
 
-  #handleSelectionModalClose() {
-    this.isSelectionModalOpen = false;
-  }
+  /**
+   * Handles changes to the game duration input
+   * @private
+   * @param {InputEvent} e - The input event
+   */
+  #handleDurationChange = (e) => {
+    this.gameDuration = e.target.value;
+    localStorage.setItem(`${PREFIX}${this.gameId}.duration`, this.gameDuration);
+  };
 
-  #handleGameCleared(e) {
-    this.dispatchEvent(
-      new CustomEvent('game-deleted', {
-        detail: e.detail,
-        bubbles: true,
-        composed: true,
-      }),
-    );
-  }
-
-  #handleGameExport(e) {
-    this.dispatchEvent(
-      new CustomEvent('game-export', {
-        detail: e.detail,
-        bubbles: true,
-        composed: true,
-      }),
-    );
-  }
-
-  #handleNewGameClick() {
-    this.dispatchEvent(
-      new CustomEvent('new-game-clicked', {
-        bubbles: true,
-        composed: true,
-      }),
-    );
-  }
-
-  #handleDurationInput(e) {
-    const duration = e.target.value;
-    this.gameDuration = duration;
-    localStorage.setItem(`${PREFIX}${this.selectedGameId}.duration`, duration);
-    this.dispatchEvent(
-      new CustomEvent('duration-changed', {
-        detail: { duration },
-        bubbles: true,
-        composed: true,
-      }),
-    );
-  }
-
+  /**
+   * Renders the game controls component
+   * @returns {TemplateResult} The HTML template for the component
+   */
   render() {
     const gamesList = JSON.parse(localStorage.getItem('jetlag.games.list') || '[]');
-    const selectedGame = gamesList.find((game) => game.id === this.selectedGameId);
+    const selectedGame = gamesList.find((game) => game.id === this.gameId);
+
     return html`
-      <div class="game-controls">
-        <div>
-          <label>Current Game:</label>
+      <div class="controls">
+        <div class="control-group">
+          <label>Game:</label>
           <button @click=${() => (this.isSelectionModalOpen = true)}>
-            ${selectedGame ? selectedGame.name : 'Select Game'}
+            ${selectedGame?.name || 'Select Game'}
           </button>
         </div>
-        <div>
-          <label for="game-duration">Game Duration:</label>
+
+        <div class="control-group">
+          <label>Duration:</label>
           <input
-            id="game-duration"
             type="text"
             placeholder="e.g., 3h 15m"
             .value=${this.gameDuration}
-            @input=${this.#handleDurationInput}
+            @input=${this.#handleDurationChange}
           />
         </div>
       </div>
 
       <game-selection-modal
         ?isOpen=${this.isSelectionModalOpen}
-        .selectedGameId=${this.selectedGameId}
+        .gameId=${this.gameId}
         @game-selected=${this.#handleGameSelect}
-        @modal-closed=${this.#handleSelectionModalClose}
-        @game-cleared=${this.#handleGameCleared}
-        @game-export=${this.#handleGameExport}
+        @modal-closed=${() => (this.isSelectionModalOpen = false)}
       ></game-selection-modal>
     `;
   }

@@ -8,7 +8,7 @@ import { PREFIX } from '../../game-pages.js';
 export class LocalStorageElement extends LitElement {
   static properties = {
     id: { type: String, reflect: true },
-    gameId: { type: String, reflect: true },
+    gameId: { type: String, reflect: true, state: true },
   };
 
   /**

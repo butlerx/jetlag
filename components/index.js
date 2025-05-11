@@ -14,4 +14,3 @@ import './specific/game-content.js';
 import './specific/game-controls.js';
 import './specific/game-header.js';
 import './specific/game-selection-modal.js';
-import './specific/new-game-modal.js';

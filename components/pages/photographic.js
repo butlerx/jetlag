@@ -1,4 +1,4 @@
-import { html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { html, css, cache } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js';
 import { QuestionElement } from '../base/question-element.js';
 import { PHOTOS_MODE } from '../../game-pages.js';
 
@@ -45,24 +45,26 @@ class PhotosMode extends QuestionElement {
 
         <div class="game-question">Send a photo of <span class="heavy">Subject</span></div>
 
-        ${PHOTOS_MODE.categories.map(
-          (cat) => html`
-            <div class="category">
-              <div class="category-title">${cat.title}:</div>
-              <div class="photo-options">
-                ${cat.fields.map(
-                  (item) => html`
-                    <persistent-checkbox
-                      id="${PHOTOS_MODE.title}.${item.id}"
-                      gameId="${this.gameId}"
-                      >${item.label}
-                      <div class="subtext">${item.description}</div>
-                    </persistent-checkbox>
-                  `,
-                )}
+        ${cache(
+          PHOTOS_MODE.categories.map(
+            (cat) => html`
+              <div class="category">
+                <div class="category-title">${cat.title}:</div>
+                <div class="photo-options">
+                  ${cat.fields.map(
+                    (item) => html`
+                      <persistent-checkbox
+                        id="${PHOTOS_MODE.title}.${item.id}"
+                        .gameId="${this.gameId}"
+                        >${item.label}
+                        <div class="subtext">${item.description}</div>
+                      </persistent-checkbox>
+                    `,
+                  )}
+                </div>
               </div>
-            </div>
-          `,
+            `,
+          ),
         )}
       </div>
     `;
