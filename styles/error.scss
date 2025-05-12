@@ -1,0 +1,97 @@
+.error-page {
+  text-align: center;
+  padding: 30px;
+  background-color: var(--jetlag-light);
+  border-radius: 8px;
+  color: var(--jetlag-dark);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 0 20px 0;
+  border: 5px solid var(--jetlag-primary);
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: var(--jetlag-primary);
+  border-bottom: 3px solid var(--jetlag-accent);
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  display: block;
+  text-align: center;
+}
+
+.error-animation {
+  position: relative;
+  height: 120px;
+  margin: 30px 0;
+  overflow: hidden;
+}
+
+.clock {
+  font-size: 60px;
+  animation: spin 10s linear infinite;
+  color: var(--jetlag-secondary);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.plane {
+  font-size: 36px;
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  animation: fly 5s linear infinite;
+  color: var(--jetlag-accent);
+  transform: translateY(-50%);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fly {
+  0% {
+    left: -30px;
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    left: 100%;
+    transform: translateY(-50%) rotate(10deg);
+  }
+}
+
+.home-button {
+  background-color: var(--jetlag-secondary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 1em;
+  margin-top: 25px;
+  padding: 12px 25px;
+}
+
+.home-button:hover {
+  background-color: #c0392b;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+  .error-page {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .clock {
+    font-size: 50px;
+  }
+
+  .plane {
+    font-size: 30px;
+  }
+}

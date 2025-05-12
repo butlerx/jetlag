@@ -5,8 +5,7 @@ investigations while playing Jet Lag: The Game Hide and Seek home edition.
 
 ## Features
 
-- Simple, lightweight web application built with lit.js
-- No build steps required - runs directly in your browser
+- Simple, lightweight web application built with Yew
 - All notes stored locally in your browser
 - No syncing or server requirements - your data stays on your device
 - Designed specifically to enhance your Jet Lag: The Game Hide and Seek
@@ -20,29 +19,56 @@ The easiest way to use the Investigation Book is through the hosted version:
 
 Visit: https://butlerx.github.io/jetlag/
 
-### Local Installation (For Testing)
+### Installation (For Development)
 
-If you need to run the application locally for testing:
+If you want to run or develop the application locally:
 
-1. Clone this repository:
+1. Install Rust if you don't already have it:
+   https://www.rust-lang.org/tools/install
+
+2. Add the WebAssembly target:
+
+   ```bash
+   rustup target add wasm32-unknown-unknown
+   ```
+
+3. Install Trunk and wasm-bindgen-cli:
+
+   ```bash
+   cargo install trunk wasm-bindgen-cli
+   ```
+
+4. Clone this repository:
 
    ```bash
    git clone https://github.com/butlerx/jetlag.git
    ```
 
-2. Navigate to the project directory:
-
+5. Navigate to the project directory:
    ```bash
    cd jetlag
    ```
 
-3. Start a local server using Python:
+### Running Locally
 
-   ```bash
-   python3 -m http.server 8000
-   ```
+Start a local development server with:
 
-4. Open your browser and go to `http://localhost:8000`
+```bash
+trunk serve
+```
+
+This will automatically rebuild the app whenever changes are detected and run a
+local server. Access the app at `http://localhost:8080` in your browser.
+
+### Building for Release
+
+To create an optimized production build:
+
+```bash
+trunk build --release
+```
+
+The output will be located in the `dist` directory.
 
 ### Usage
 
@@ -53,11 +79,11 @@ If you need to run the application locally for testing:
 
 ## Technical Details
 
-This application is built using lit.js, a lightweight library for building web
-components. The app runs entirely client-side with:
+This application is built using Yew, a modern Rust framework for creating
+multi-threaded front-end web apps with WebAssembly. The app runs entirely
+client-side with:
 
-- No build steps or compilation required
-- No external dependencies beyond lit.js
+- Rust compiled to WebAssembly for high performance
 - All data stored in browser localStorage
 - No internet connection required after initial load
 

@@ -1,0 +1,36 @@
+[package]
+name = "jetlag"
+version = "0.1.0"
+edition = "2021"
+description = "An unofficial investigation book web app for tracking your notes and investigations while playing 'Jet Lag: The Game - Hide + Seek' home edition."
+readme = "README.md"
+authors = ["Cian Butler <butlerx@notthe.cloud>"]
+repository = "https://github.com/butlerx/jetlag"
+license = "MIT"
+keywords = [
+  "jetlag",
+  "jetlagthegame",
+  "hide-and-seek",
+  "yew",
+  "rust",
+  "web",
+  "wasm",
+]
+categories = ["wasm", "web", "game", "simple"]
+
+[dependencies]
+gloo-utils = "0.2"
+implicit-clone = { version = "0.4", features = ["serde", "map"] }
+js-sys = "0.3"
+log = "0.4.27"
+thiserror = "2"
+wasm-bindgen = "0.2"
+wasm-logger = "0.2.0"
+web-sys = { version = "0.3", features = [
+  "HtmlAnchorElement",
+  "Window",
+  "Blob",
+  "Url",
+] }
+yew = { version = "0.21", features = ["csr"] }
+yew-router = "0.18"

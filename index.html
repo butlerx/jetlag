@@ -9,45 +9,23 @@
       content="A Notebook for playing Jet Lag: The Game"
     />
     <title>Jet Lag: The Game - Hide + Seek Investigation Book</title>
+    <link data-trunk rel="sass" href="index.scss" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      /* Jet Lag: The Game Theme */
-      :root {
-        --jetlag-primary: #e74c3c; /* Vibrant red for primary elements */
-        --jetlag-secondary: #3498db; /* Blue for secondary elements */
-        --jetlag-accent: #f1c40f; /* Yellow accent for highlights */
-        --jetlag-dark: #2c3e50; /* Dark blue/gray for backgrounds */
-        --jetlag-light: #ecf0f1; /* Light gray for text backgrounds */
-        --jetlag-text: #34495e; /* Dark gray for text */
-        --jetlag-success: #2ecc71; /* Green for success messages */
-        --jetlag-warning: #f39c12; /* Orange for warnings */
-        --jetlag-danger: #c0392b; /* Dark red for danger/errors */
-      }
-
-      body {
-        font-family: 'Montserrat', 'Roboto', sans-serif;
-        background-color: var(--jetlag-dark);
-        color: var(--jetlag-text);
-        line-height: 1.6;
-        margin: 0;
-        padding: 20px;
-      }
-    </style>
     <link rel="canonical" href="/jetlag" />
-    <link rel="manifest" href="./manifest.json" />
-    <script type="module" src="./app.js"></script>
+    <link data-trunk rel="copy-dir" href="static" />
+    <link rel="manifest" href="./static/manifest.json" />
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="./icons/icon-128x128.png"
+      href="./static/icon-128x128.png"
     />
-    <link rel="icon" type="image/x-icon" href="./icons/icon-128x128.png" />
-    <link href="./icons/icon-128x128.png" rel="icon" />
-    <link href="./icons/icon-128x128.png" rel="apple-touch-icon" />
-    <link href="./icons/icon-128x128.png" rel="icon" sizes="128x128" />
+    <link rel="icon" type="image/x-icon" href="./static/icon-128x128.png" />
+    <link href="./static/icon-128x128.png" rel="icon" />
+    <link href="./static/icon-128x128.png" rel="apple-touch-icon" />
+    <link href="./static/icon-128x128.png" rel="icon" sizes="128x128" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="#233041" />
     <meta name="mobile-web-app-capable" content="yes" />
@@ -63,12 +41,11 @@
     <meta property="og:type" content="webapp" />
   </head>
   <body>
-    <jetlag-the-game />
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker
-            .register('./sw.js')
+            .register('./static/sw.js')
             .then((registration) => {
               if (registration.installing) {
                 console.log('Service worker installing');
@@ -84,5 +61,5 @@
         });
       }
     </script>
-  </body>
+</body>
 </html>

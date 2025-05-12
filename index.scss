@@ -1,0 +1,52 @@
+/* Jet Lag: The Game Theme */
+:root {
+  --jetlag-primary: #e74c3c; /* Vibrant red for primary elements */
+  --jetlag-secondary: #3498db; /* Blue for secondary elements */
+  --jetlag-accent: #f1c40f; /* Yellow accent for highlights */
+  --jetlag-dark: #2c3e50; /* Dark blue/gray for backgrounds */
+  --jetlag-light: #ecf0f1; /* Light gray for text backgrounds */
+  --jetlag-text: #34495e; /* Dark gray for text */
+  --jetlag-success: #2ecc71; /* Green for success messages */
+  --jetlag-warning: #f39c12; /* Orange for warnings */
+  --jetlag-danger: #c0392b; /* Dark red for danger/errors */
+}
+
+body {
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+  background-color: var(--jetlag-dark);
+  color: var(--jetlag-text);
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+}
+
+main {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+main:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 15px;
+  }
+}
+
+@import './styles/button.scss';
+@import './styles/checked_box.scss';
+@import './styles/error.scss';
+@import './styles/header.scss';
+@import './styles/navbar.scss';
+@import './styles/persistent-input.scss';
+@import './styles/question.scss';
+@import './styles/modal.scss';

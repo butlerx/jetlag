@@ -1,0 +1,32 @@
+.toggle {
+  background: none;
+  border-radius: 8px;
+  border: 2px solid rgba(35, 48, 65, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: var(--jetlag-dark);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  letter-spacing: 0;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  width: 100%;
+}
+
+.toggle:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-color: var(--jetlag-accent);
+}
+
+.checked {
+  border-color: var(--jetlag-success);
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3);
+  font-weight: bold;
+}
