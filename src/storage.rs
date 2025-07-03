@@ -47,6 +47,7 @@ impl LocalStorage {
     }
 
     /// Get all the stored keys and their values
+    #[allow(dead_code)]
     pub fn get_all() -> HashMap<IString, IString> {
         let local_storage = Self::raw();
         (0..=Self::length())
