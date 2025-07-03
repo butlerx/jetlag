@@ -1,12 +1,13 @@
-use crate::{components::PersistentCheckbox, constants::PHOTOS_MODE};
+use crate::{components::PersistentCheckbox, constants};
 use yew::prelude::*;
 
 #[function_component(Photographic)]
 pub fn photos_mode() -> Html {
+    let constants::GameMode { title, categories } = constants::photos_mode();
     html! {
         <div class="game-page">
             <div class="game-header">
-                <div class="game-title">{ &PHOTOS_MODE.title }</div>
+                <div class="game-title">{ &title }</div>
                 <div class="game-info">
                     { "Cost: " }
                     <span>{ "Draw 1" }</span>
@@ -19,15 +20,15 @@ pub fn photos_mode() -> Html {
                 { "Send a photo of " }
                 <span class="heavy">{ "Subject" }</span>
             </div>
-            { for PHOTOS_MODE.categories.iter().map(|cat| html! {
+            { for categories.iter().map(|cat| html! {
                     <div class="category">
                         <div class="category-title">{ &cat.title }{":"}</div>
                             <div class="photo-options">
                                 {
                                     for cat.fields.iter().map(|item| html! {
-                                        <PersistentCheckbox id={format!("{}.{}", PHOTOS_MODE.title, item.id)} >
-                                            {item.label}
-                                            <div class="subtext">{item.description}</div>
+                                        <PersistentCheckbox id={format!("{}.{}", title, item.id)} >
+                                            {item.label.clone()}
+                                            <div class="subtext">{item.description.clone()}</div>
                                         </PersistentCheckbox>
                                     })
                                 }

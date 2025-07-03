@@ -1,5 +1,8 @@
 use crate::{
-    constants::{Field, GameMode, GAME_PAGES},
+    constants::{
+        matching_mode, measuring_mode, photos_mode, radar_mode, tentacles_mode, thermometer_mode,
+        Field, GameMode,
+    },
     storage::LocalStorage,
 };
 use wasm_bindgen::{JsCast, JsValue};
@@ -10,11 +13,18 @@ use yew::prelude::*;
 pub fn export_game() -> Html {
     let onclick = {
         Callback::from(move |_| {
-            let notes = GAME_PAGES
-                .iter()
-                .filter_map(|page| process_page(page))
-                .collect::<Vec<_>>()
-                .join("\n\n");
+            let notes = vec![
+                matching_mode(),
+                measuring_mode(),
+                thermometer_mode(),
+                radar_mode(),
+                tentacles_mode(),
+                photos_mode(),
+            ]
+            .iter()
+            .filter_map(|page| process_page(page))
+            .collect::<Vec<_>>()
+            .join("\n\n");
             download_markdown(&notes, "game-data.md");
         })
     };
@@ -42,13 +52,13 @@ fn process_page(page: &GameMode) -> Option<String> {
             let fields = cat
                 .fields
                 .iter()
-                .filter_map(|field| process_field(field, page.title))
+                .filter_map(|field| process_field(field, &page.title))
                 .collect::<Vec<_>>()
                 .join("\n\n");
             if fields.is_empty() {
                 None
             } else {
-                Some(format!("## {}\n\n{}", titleize(cat.title), fields))
+                Some(format!("## {}\n\n{}", titleize(&cat.title), fields))
             }
         })
         .collect::<Vec<_>>()
@@ -57,7 +67,7 @@ fn process_page(page: &GameMode) -> Option<String> {
     if page_content.is_empty() {
         None
     } else {
-        Some(format!("# {}\n\n{}", titleize(page.title), page_content))
+        Some(format!("# {}\n\n{}", titleize(&page.title), page_content))
     }
 }
 
@@ -86,7 +96,7 @@ fn process_photos_page(page: &GameMode) -> String {
         .collect::<Vec<_>>()
         .join("\n\n");
 
-    format!("# {}\n\n{}", titleize(page.title), list)
+    format!("# {}\n\n{}", titleize(&page.title), list)
 }
 
 fn process_field(field: &Field, title: &str) -> Option<String> {

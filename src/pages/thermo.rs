@@ -1,12 +1,14 @@
-use crate::{components::PersistentInput, constants::THERMOMETER_MODE};
+use crate::{components::PersistentInput, constants};
 use yew::prelude::*;
 
 #[function_component(Thermo)]
 pub fn thermo_mode() -> Html {
+    let constants::GameMode { title, categories } = constants::thermometer_mode();
+
     html! {
         <div class="game-page">
             <div class="game-header">
-                <div class="game-title">{ THERMOMETER_MODE.title }</div>
+                <div class="game-title">{ title.clone() }</div>
                 <div class="game-info">
                     { "Cost: " }
                     <span>{ "Draw 2, Pick 1" }</span>
@@ -19,13 +21,13 @@ pub fn thermo_mode() -> Html {
                 <span class="light">{ "Distance" }</span>
                 { ". Am I hotter or colder?" }
             </div>
-            { for THERMOMETER_MODE.categories.iter().map(|cat| {
+            { for categories.iter().map(|cat| {
                 html! {
                     <div class="category">
-                        <div class="category-title">{ cat.title }</div>
+                        <div class="category-title">{ cat.title.clone() }</div>
                         { for cat.fields.iter().map(|item| {
-                                let id = format!("{}.{}", THERMOMETER_MODE.title, item.id);
-                                html! { <PersistentInput id={id} label={ item.label }/> }
+                                let id = format!("{}.{}", title, item.id);
+                                html! { <PersistentInput {id} label={ item.label.clone() }/> }
                         }) }
                     </div>
                 }

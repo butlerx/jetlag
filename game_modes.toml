@@ -1,0 +1,416 @@
+# Game Modes Configuration for Jetlag Game
+
+[[game_modes]]
+title = "matching"
+
+[[game_modes.categories]]
+title = "Transit"
+
+[[game_modes.categories.fields]]
+id = "commercial-airport"
+label = "✈️ Commercial Airport"
+
+[[game_modes.categories.fields]]
+id = "transit-line"
+label = "🚆 Transit Line"
+
+[[game_modes.categories.fields]]
+id = "station-name-length"
+label = "📏 Station's Name Length"
+
+[[game_modes.categories.fields]]
+id = "street-path"
+label = "🛣️ Street or Path"
+
+[[game_modes.categories]]
+title = "Administrative Divisions"
+
+[[game_modes.categories.fields]]
+id = "admin-div-1"
+label = "🗺️ 1st Admin. Division"
+
+[[game_modes.categories.fields]]
+id = "admin-div-2"
+label = "📍 2nd Admin. Division"
+
+[[game_modes.categories.fields]]
+id = "admin-div-3"
+label = "🏙️ 3rd Admin. Division"
+
+[[game_modes.categories.fields]]
+id = "admin-div-4"
+label = "🏘️ 4th Admin. Division"
+
+[[game_modes.categories]]
+title = "Natural"
+
+[[game_modes.categories.fields]]
+id = "mountain"
+label = "⛰️ Mountain"
+
+[[game_modes.categories.fields]]
+id = "landmass"
+label = "🏝️ Landmass"
+
+[[game_modes.categories.fields]]
+id = "park"
+label = "🌳 Park"
+
+[[game_modes.categories]]
+title = "Places of Interest"
+
+[[game_modes.categories.fields]]
+id = "amusement-park"
+label = "🎢 Amusement Park"
+
+[[game_modes.categories.fields]]
+id = "zoo"
+label = "🦁 Zoo"
+
+[[game_modes.categories.fields]]
+id = "aquarium"
+label = "🐠 Aquarium"
+
+[[game_modes.categories.fields]]
+id = "golf-course"
+label = "⛳ Golf Course"
+
+[[game_modes.categories.fields]]
+id = "museum"
+label = "🏛️ Museum"
+
+[[game_modes.categories.fields]]
+id = "movie-theater"
+label = "🎬 Movie Theater"
+
+[[game_modes.categories]]
+title = "Public Utilities"
+
+[[game_modes.categories.fields]]
+id = "hospital"
+label = "🏥 Hospital"
+
+[[game_modes.categories.fields]]
+id = "library"
+label = "📚 Library"
+
+[[game_modes.categories.fields]]
+id = "foreign-consulate"
+label = "🏛️🌍 Foreign Consulate"
+
+[[game_modes]]
+title = "measuring"
+
+[[game_modes.categories]]
+title = "Transit"
+
+[[game_modes.categories.fields]]
+id = "commercial-airport"
+label = "✈️ Commercial Airport"
+
+[[game_modes.categories.fields]]
+id = "transit-line"
+label = "🚄 A High Speed Train Line"
+
+[[game_modes.categories.fields]]
+id = "rail-station"
+label = "🚉 A Rail Station"
+
+[[game_modes.categories]]
+title = "Borders"
+
+[[game_modes.categories.fields]]
+id = "international-border"
+label = "🌍 An International Border"
+
+[[game_modes.categories.fields]]
+id = "admin-div-1"
+label = "🗺️ A 1st Admin. Div. Border"
+
+[[game_modes.categories.fields]]
+id = "admin-div-2"
+label = "📍 A 2nd Admin. Div. Border"
+
+[[game_modes.categories]]
+title = "Natural"
+
+[[game_modes.categories.fields]]
+id = "sea-level"
+label = "🌊 Sea Level"
+
+[[game_modes.categories.fields]]
+id = "body-of-water"
+label = "💧 A Body of Water"
+
+[[game_modes.categories.fields]]
+id = "coastline"
+label = "🏖️ A Coastline"
+
+[[game_modes.categories.fields]]
+id = "mountain"
+label = "⛰️ A Mountain"
+
+[[game_modes.categories.fields]]
+id = "park"
+label = "🌳 A Park"
+
+[[game_modes.categories]]
+title = "Places of Interest"
+
+[[game_modes.categories.fields]]
+id = "amusement-park"
+label = "🎢 An Amusement Park"
+
+[[game_modes.categories.fields]]
+id = "zoo"
+label = "🦁 A Zoo"
+
+[[game_modes.categories.fields]]
+id = "aquarium"
+label = "🐠 An Aquarium"
+
+[[game_modes.categories.fields]]
+id = "golf-course"
+label = "⛳ A Golf Course"
+
+[[game_modes.categories.fields]]
+id = "museum"
+label = "🏛️ A Museum"
+
+[[game_modes.categories.fields]]
+id = "movie-theater"
+label = "🎬 A Movie Theater"
+
+[[game_modes.categories]]
+title = "Public Utilities"
+
+[[game_modes.categories.fields]]
+id = "hospital"
+label = "🏥 A Hospital"
+
+[[game_modes.categories.fields]]
+id = "library"
+label = "📚 A Library"
+
+[[game_modes.categories.fields]]
+id = "consulate"
+label = "🏛️🌍 A Foreign Consulate"
+
+[[game_modes]]
+title = "thermometer"
+
+[[game_modes.categories]]
+title = "All Games"
+
+[[game_modes.categories.fields]]
+id = "half-mile"
+label = "🔥 ½ Mile"
+
+[[game_modes.categories.fields]]
+id = "three-miles"
+label = "🔥 3 Miles"
+
+[[game_modes.categories]]
+title = "Medium Games"
+
+[[game_modes.categories.fields]]
+id = "ten-miles"
+label = "🌡️ 10 Miles"
+
+[[game_modes.categories]]
+title = "Large Games"
+
+[[game_modes.categories.fields]]
+id = "fifty-miles"
+label = "❄️ 50 Miles"
+
+[[game_modes]]
+title = "radar"
+
+[[game_modes.categories]]
+title = "All Games"
+
+[[game_modes.categories.fields]]
+id = "quarter-mile"
+label = "📍 ¼ Mile"
+
+[[game_modes.categories.fields]]
+id = "half-mile"
+label = "📍 ½ Mile"
+
+[[game_modes.categories.fields]]
+id = "one-mile"
+label = "📍 1 Mile"
+
+[[game_modes.categories.fields]]
+id = "three-miles"
+label = "📍 3 Miles"
+
+[[game_modes.categories.fields]]
+id = "five-miles"
+label = "📍 5 Miles"
+
+[[game_modes.categories.fields]]
+id = "ten-miles"
+label = "🔍 10 Miles"
+
+[[game_modes.categories.fields]]
+id = "twenty-five-miles"
+label = "🔍 25 Miles"
+
+[[game_modes.categories.fields]]
+id = "fifty-miles"
+label = "🌐 50 Miles"
+
+[[game_modes.categories.fields]]
+id = "hundred-miles"
+label = "🌐 100 Miles"
+
+[[game_modes.categories.fields]]
+id = "choose"
+label = "🎯 Choose"
+
+[[game_modes]]
+title = "tentacles"
+
+[[game_modes.categories]]
+title = "Medium & Large Games"
+distance = 1
+
+[[game_modes.categories.fields]]
+id = "museums"
+label = "🏛️ Museums"
+
+[[game_modes.categories.fields]]
+id = "libraries"
+label = "📚 Libraries"
+
+[[game_modes.categories.fields]]
+id = "movie-theaters"
+label = "🎬 Movie Theaters"
+
+[[game_modes.categories.fields]]
+id = "hospitals"
+label = "🏥 Hospitals"
+
+[[game_modes.categories]]
+title = "Large Games Only"
+distance = 15
+
+[[game_modes.categories.fields]]
+id = "metro-lines"
+label = "🚇 Metro Lines"
+
+[[game_modes.categories.fields]]
+id = "zoos"
+label = "🦁 Zoos"
+
+[[game_modes.categories.fields]]
+id = "aquariums"
+label = "🐠 Aquariums"
+
+[[game_modes.categories.fields]]
+id = "amusement-parks"
+label = "🎢 Amusement Parks"
+
+[[game_modes]]
+title = "photos"
+
+[[game_modes.categories]]
+title = "All Games"
+
+[[game_modes.categories.fields]]
+id = "tree"
+label = "🌳 A Tree"
+description = "Must include the entire tree."
+
+[[game_modes.categories.fields]]
+id = "sky"
+label = "☁️ The Sky"
+description = "Place phone on ground, shoot directly up."
+
+[[game_modes.categories.fields]]
+id = "you"
+label = "🤳 You"
+description = "Selfie mode. Arm parallel to the ground, fully extended."
+
+[[game_modes.categories.fields]]
+id = "widest-street"
+label = "🛣️ Widest Street"
+description = "Must include both sides of the street."
+
+[[game_modes.categories.fields]]
+id = "tallest-structure"
+label = "🏙️ Tallest Structure in Your Sightline"
+description = "Tallest from your current perspective/sightline. Must include top and both sides. The top must be in the top ⅓ of the frame."
+
+[[game_modes.categories.fields]]
+id = "building-from-station"
+label = "🚉 Any Building Visible from Station"
+description = "Must stand directly outside transit station entrance. If multiple entrances, you may choose. Must include roof, both sides, with the top of building in top ⅓ of the frame."
+
+[[game_modes.categories]]
+title = "Add for Medium & Large"
+
+[[game_modes.categories.fields]]
+id = "tallest-building-from-station"
+label = "🏢 Tallest Building Visible from Station"
+description = "Tallest from your perspective/sightline. Must stand directly outside transit station entrance. If multiple entrances, you may choose. Must include roof, both sides, with the top of building in top ⅓ of the frame."
+
+[[game_modes.categories.fields]]
+id = "trace-street"
+label = "🗺️ Trace Nearest Street/Path"
+description = "Street/path must be visible on mapping app. Trace intersection to intersection."
+
+[[game_modes.categories.fields]]
+id = "two-buildings"
+label = "🏘️ Two Buildings"
+description = "Must include bottom and up to four stories."
+
+[[game_modes.categories.fields]]
+id = "restaurant-interior"
+label = "🍽️ Restaurant Interior"
+description = "No zoom. Must take the picture through the window from outside the restaurant."
+
+[[game_modes.categories.fields]]
+id = "train-platform"
+label = "🚆 Train Platform"
+description = "Must include a 5' x 5' section with three distinct elements."
+
+[[game_modes.categories.fields]]
+id = "park"
+label = "🌲 Park"
+description = "No zoom, phone perpendicular to ground. Must stand 5' from any obstruction."
+
+[[game_modes.categories.fields]]
+id = "grocery-store"
+label = "🛒 Grocery Store Aisle"
+description = "No zoom. Stand at the end of the aisle, shoot directly down."
+
+[[game_modes.categories.fields]]
+id = "place-of-worship"
+label = "🏛️ Place of Worship"
+description = "Must include a 5' x 5' section with three distinct elements."
+
+[[game_modes.categories]]
+title = "Add for Large"
+
+[[game_modes.categories.fields]]
+id = "streets-traced"
+label = "🗺️ ½ Mile of Streets Traced"
+description = "Must be continuous, including 5 turns, no doubling back. Send N-S oriented. Streets must appear on mapping app."
+
+[[game_modes.categories.fields]]
+id = "tallest-mountain"
+label = "⛰️ Tallest Mountain Visible from Station"
+description = "Tallest from your perspective/sightline. Max 3x zoom. Top of mountain must be in top ⅓ of frame."
+
+[[game_modes.categories.fields]]
+id = "body-of-water"
+label = "💧 Biggest Body of Water in Your Zone"
+description = "Max 3x zoom. Must include either both sides of body of water or the horizon."
+
+[[game_modes.categories.fields]]
+id = "five-buildings"
+label = "🏙️ Five Buildings"
+description = "Must include bottom and up to four stories."
