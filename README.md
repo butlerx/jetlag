@@ -65,7 +65,7 @@ local server. Access the app at `http://localhost:8080` in your browser.
 To create an optimized production build:
 
 ```bash
-trunk build --release
+trunk build --release --public-url /jetlag
 ```
 
 The output will be located in the `dist` directory.

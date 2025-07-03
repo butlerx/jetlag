@@ -91,9 +91,9 @@ impl LocalStorage {
                 },
             )
             .collect::<Vec<_>>();
-        for key in keys.iter() {
+        for key in &keys {
             local_storage
-                .remove_item(&key)
+                .remove_item(key)
                 .expect_throw("unreachable: remove_item does not throw an exception");
         }
     }

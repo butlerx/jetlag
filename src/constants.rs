@@ -465,15 +465,15 @@ pub static PHOTOS_MODE: GameMode = GameMode {
                 Field { id: "sky", label: "☁️ The Sky", description: Some("Place phone on ground, shoot directly up.") },
                 Field { id: "you", label: "🤳 You", description: Some("Selfie mode. Arm parallel to the ground, fully extended.") },
                 Field { id: "widest-street", label: "🛣️ Widest Street", description: Some("Must include both sides of the street.") },
-                Field { id: "tallest-structure", label: "🏙️ Tallest Structure in Your Sightline", description: Some("Tallest from your current perspective/sightline. Must include top and both sides. The top must be in the top ½ of the frame.") },
-                Field { id: "building-from-station", label: "🚉 Any Building Visible from Station", description: Some("Must stand directly outside transit station entrance. If multiple entrances, you may choose. Must include roof, both sides, with the top of building in top ½ of the frame.") },
+                Field { id: "tallest-structure", label: "🏙️ Tallest Structure in Your Sightline", description: Some("Tallest from your current perspective/sightline. Must include top and both sides. The top must be in the top ⅓ of the frame.") },
+                Field { id: "building-from-station", label: "🚉 Any Building Visible from Station", description: Some("Must stand directly outside transit station entrance. If multiple entrances, you may choose. Must include roof, both sides, with the top of building in top ⅓ of the frame.") },
             ],
         },
         Category {
             title: "Add for Medium & Large",
             distance: None,
             fields: &[
-                Field { id: "tallest-building-from-station", label: "🏢 Tallest Building Visible from Station", description: Some("Tallest from your perspective/sightline. Must stand directly outside transit station entrance. If multiple entrances, you may choose. Must include roof, both sides, with the top of building in top ½ of the frame.") },
+                Field { id: "tallest-building-from-station", label: "🏢 Tallest Building Visible from Station", description: Some("Tallest from your perspective/sightline. Must stand directly outside transit station entrance. If multiple entrances, you may choose. Must include roof, both sides, with the top of building in top ⅓ of the frame.") },
                 Field { id: "trace-street", label: "🗺️ Trace Nearest Street/Path", description: Some("Street/path must be visible on mapping app. Trace intersection to intersection.") },
                 Field { id: "two-buildings", label: "🏘️ Two Buildings", description: Some("Must include bottom and up to four stories.") },
                 Field { id: "restaurant-interior", label: "🍽️ Restaurant Interior", description: Some("No zoom. Must take the picture through the window from outside the restaurant.") },
@@ -488,7 +488,7 @@ pub static PHOTOS_MODE: GameMode = GameMode {
             distance: None,
             fields: &[
                 Field { id: "streets-traced", label: "🗺️ ½ Mile of Streets Traced", description: Some("Must be continuous, including 5 turns, no doubling back. Send N-S oriented. Streets must appear on mapping app.") },
-                Field { id: "tallest-mountain", label: "⛰️ Tallest Mountain Visible from Station", description: Some("Tallest from your perspective/sightline. Max 3x zoom. Top of mountain must be in top ½ of frame.") },
+                Field { id: "tallest-mountain", label: "⛰️ Tallest Mountain Visible from Station", description: Some("Tallest from your perspective/sightline. Max 3x zoom. Top of mountain must be in top ⅓ of frame.") },
                 Field { id: "body-of-water", label: "💧 Biggest Body of Water in Your Zone", description: Some("Max 3x zoom. Must include either both sides of body of water or the horizon.") },
                 Field { id: "five-buildings", label: "🏙️ Five Buildings", description: Some("Must include bottom and up to four stories.") },
             ],
