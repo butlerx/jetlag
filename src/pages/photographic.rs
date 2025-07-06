@@ -27,8 +27,8 @@ pub fn photos_mode() -> Html {
                                 {
                                     for cat.fields.iter().map(|item| html! {
                                         <PersistentCheckbox id={format!("{}.{}", title, item.id)} >
-                                            {item.label.clone()}
-                                            <div class="subtext">{item.description.clone()}</div>
+                                            {item.label}
+                                            <div class="subtext">{item.description}</div>
                                         </PersistentCheckbox>
                                     })
                                 }

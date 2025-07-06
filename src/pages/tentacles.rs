@@ -8,7 +8,7 @@ pub fn tentacles_mode() -> Html {
     html! {
         <div class="game-page">
             <div class="game-header">
-                <div class="game-title">{ title.clone() }</div>
+                <div class="game-title">{ title }</div>
                 <div class="game-info">
                     { "Cost: " }
                     <span>{ "Draw 4, Pick 2" }</span>
@@ -28,20 +28,19 @@ pub fn tentacles_mode() -> Html {
                     { ")" }
                 </div>
             </div>
-            { for categories.iter().map(|cat| {
-
-                html! {
-                    <div class="category">
-                        <div class="category-title">
-                            { cat.title.clone() }{ ": " }
-                            <span>{ format!("{} Miles", cat.distance.unwrap_or(0)) }</span>
-                        </div>
-                        { for cat.fields.iter().map(|item| {
-                            let id = format!("{}.{}", title, item.id);
-                            html! { <PersistentInput {id} label={ item.label.clone() } /> }
-                        }) }
+            { for categories.iter().map(|cat| html! {
+                <div class="category">
+                    <div class="category-title">
+                        { cat.title }{ ": " }
+                        <span>{ format!("{} Miles", cat.distance.unwrap_or(0)) }</span>
                     </div>
-                }
+                    { for cat.fields.iter().map(|item| html! {
+                        <PersistentInput
+                            id={format!("{}.{}", title, item.id)}
+                            label={ item.label }
+                        />
+                    }) }
+                </div>
             }) }
         </div>
     }

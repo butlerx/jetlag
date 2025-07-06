@@ -12,15 +12,14 @@ pub fn radar_mode() -> Html {
         .fields
         .iter()
         .filter(|item| item.id != "choose")
-        .map(|item| {
-            let id = format!("{}.{}", title, item.id);
-            html! { <PersistentInput id={id.clone()} label={item.label.clone()} /> }
-        });
+        .map(|item|
+            html! { <PersistentInput id={format!("{}.{}", title, item.id)} label={item.label} /> }
+        );
 
     html! {
         <div class="game-page">
             <div class="game-header">
-                <div class="game-title">{ title.clone() }</div>
+                <div class="game-title">{ title }</div>
                 <div class="game-info">
                     { "Cost: " }
                     <span>{ "Draw 2, Pick 1" }</span>
@@ -34,7 +33,7 @@ pub fn radar_mode() -> Html {
                 { " of me?" }
             </div>
             <div class="category">
-                <div class="category-title">{ categories[0].title.clone() }</div>
+                <div class="category-title">{ categories[0].title }</div>
                 { for inputs }
                 <PersistentInputCustomLabel id="radar.choose" label="🎯CHOOSE" />
             </div>

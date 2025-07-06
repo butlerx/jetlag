@@ -24,7 +24,7 @@ pub fn measuring_mode() -> Html {
                         { for cat.fields.iter().map(|item| html! {
                             <PersistentInput
                                 id={format!("{}.{}", title, item.id)}
-                                label={item.label.clone()}
+                                label={item.label}
                             />
                         }) }
                     </div>

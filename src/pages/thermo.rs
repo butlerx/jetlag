@@ -8,7 +8,7 @@ pub fn thermo_mode() -> Html {
     html! {
         <div class="game-page">
             <div class="game-header">
-                <div class="game-title">{ title.clone() }</div>
+                <div class="game-title">{ title }</div>
                 <div class="game-info">
                     { "Cost: " }
                     <span>{ "Draw 2, Pick 1" }</span>
@@ -21,16 +21,16 @@ pub fn thermo_mode() -> Html {
                 <span class="light">{ "Distance" }</span>
                 { ". Am I hotter or colder?" }
             </div>
-            { for categories.iter().map(|cat| {
-                html! {
-                    <div class="category">
-                        <div class="category-title">{ cat.title.clone() }</div>
-                        { for cat.fields.iter().map(|item| {
-                                let id = format!("{}.{}", title, item.id);
-                                html! { <PersistentInput {id} label={ item.label.clone() }/> }
-                        }) }
-                    </div>
-                }
+            { for categories.iter().map(|cat| html! {
+                <div class="category">
+                    <div class="category-title">{ cat.title }</div>
+                    { for cat.fields.iter().map(|item| html! {
+                        <PersistentInput
+                            id={format!("{}.{}", title, item.id)}
+                            label={ item.label }
+                        />
+                     }) }
+                </div>
             }) }
         </div>
     }
