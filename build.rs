@@ -64,10 +64,7 @@ fn generate_game_modes_array(config: &GameModesConfig) -> String {
         .map(generate_game_mode)
         .collect::<String>();
 
-    format!(
-        "pub static GAME_MODES: &[GameMode] = &[{}];\n\n",
-        game_modes_content
-    )
+    format!("pub static GAME_MODES: &[GameMode] = &[{game_modes_content}];\n\n",)
 }
 
 fn generate_game_mode(game_mode: &GameMode) -> String {
@@ -85,7 +82,7 @@ fn generate_game_mode(game_mode: &GameMode) -> String {
 }
 
 fn generate_category(category: &Category) -> String {
-    let distance_str = format_option(category.distance.as_ref(), |d| format!("Some({})", d));
+    let distance_str = format_option(category.distance.as_ref(), |d| format!("Some({d})"));
     let fields_content = category
         .fields
         .iter()
