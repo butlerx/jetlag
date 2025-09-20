@@ -76,6 +76,8 @@
   border: 1px solid var(--jetlag-secondary);
   border-radius: 6px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .tab-option {
