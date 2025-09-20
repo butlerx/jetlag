@@ -5,7 +5,7 @@
   display: flex;
   font-size: 24px;
   font-weight: 700;
-  justify-content: center;
+  flex-direction: column;
   letter-spacing: 1px;
   min-height: 50px;
   padding-bottom: 10px;
@@ -13,47 +13,89 @@
   text-transform: none;
 }
 
-.header span {
-  padding-left: 50px;
-  white-space: nowrap;
-  text-align: center;
-  max-width: 90%;
+.subtitle {
+  margin-top: 0.8em;
 }
 
-.header-icon {
+.logo-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.main-logo {
   background-color: white;
-  border-radius: 50%;
-  border: 3px solid var(--jetlag-accent);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  height: 40px;
-  left: 0;
-  margin-right: 15px;
-  object-fit: cover;
-  padding: 2px;
+  border-radius: 25px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  max-height: 100%;
+}
+
+.logo-text {
+  color: #4a5568;
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.maps-label {
+  background-color: #f6ad55;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: #2d3748;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  padding: 6px 12px;
   position: absolute;
-  width: 40px;
+  right: -15px;
+  text-transform: uppercase;
+  top: -10px;
+  transform: rotate(5deg);
+}
+
+.logo-icon {
+  background-color: var(--jetlag-accent);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  height: 80px;
+  width: 80px;
+}
+
+.icon {
+  border: 3px solid var(--jetlag-accent);
+  border-radius: 50%;
+  height: 80%;
+  padding: 4px;
+  width: 80%;
 }
 
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
     font-size: 18px;
-    padding-top: 45px;
     text-align: center;
   }
 
-  .header span {
-    font-size: 0.8em;
-    line-height: 1.3;
-    padding-left: 0;
-    padding-top: 12px;
-    white-space: normal;
+  .logo-text {
+    font-size: 32px;
   }
 
-  .header-icon {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+  .logo-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .main-logo {
+    padding: 15px 25px;
+    gap: 15px;
+  }
+
+  .maps-label {
+    padding: 6px 12px;
   }
 }
 
