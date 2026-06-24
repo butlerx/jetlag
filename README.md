@@ -130,3 +130,8 @@ fans!)
 **Ready to crack the case?** 🕵️‍♀️
 [Start your investigation now!](https://butlerx.github.io/jetlag/) and show that
 mystery who's boss! 🎯
+
+## Related Community Resources
+
+<!-- Added 2026-06-24 by zlc000190 -->
+- [Meccha Chameleon Art](https://mecchachameleon.art/) — Fan-made browser companion for Meccha Chameleon, a paint-based hide-and-seek Steam game. 50+ hiding spot atlas with color/paint analysis, bilingual (EN/中文). GitHub awesome list: https://github.com/zlc000190/AwesomeMecchaChameleonHideSpot
