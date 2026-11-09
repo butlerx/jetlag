@@ -41,8 +41,8 @@ impl LocalStorage {
         let item = Self::raw()
             .get_item(&key)
             .expect_throw("unreachable: get_item does not throw an exception")
-            .ok_or_else(|| StorageError::KeyNotFound(key.to_string()))?;
-        let item = Into::<IString>::into(item.to_string());
+            .ok_or_else(|| StorageError::KeyNotFound(key.clone()))?;
+        let item = Into::<IString>::into(item.clone());
         Ok(item)
     }
 
@@ -56,7 +56,7 @@ impl LocalStorage {
                     Ok(Some(key)) if key.starts_with(PREFIX) => {
                         match local_storage.get_item(&key) {
                             Ok(Some(value)) => {
-                                Some((key.into(), Into::<IString>::into(value.to_string())))
+                                Some((key.into(), Into::<IString>::into(value.clone())))
                             }
                             _ => None,
                         }

@@ -11,9 +11,7 @@ pub struct PersistentCheckboxProps {
 
 #[function_component(PersistentCheckbox)]
 pub fn persistent_checkbox(props: &PersistentCheckboxProps) -> Html {
-    let initial_checked = LocalStorage::get(&props.id)
-        .map(|val| val == "true")
-        .unwrap_or(false);
+    let initial_checked = LocalStorage::get(&props.id).is_ok_and(|val| val == "true");
 
     let checked = use_state(|| initial_checked);
 
