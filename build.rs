@@ -5,13 +5,16 @@ use std::{env, fs, path::Path};
 struct Field {
     id: String,
     label: String,
+    label_metric: Option<String>,
     description: Option<String>,
+    description_metric: Option<String>,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 struct Category {
     title: String,
-    distance: Option<u32>,
+    distance: Option<String>,
+    distance_metric: Option<String>,
     fields: Vec<Field>,
 }
 
@@ -82,7 +85,8 @@ fn generate_game_mode(game_mode: &GameMode) -> String {
 }
 
 fn generate_category(category: &Category) -> String {
-    let distance_str = format_option(category.distance.as_ref(), |d| format!("Some({d})"));
+    let distance_str = format_str_option(category.distance.as_ref());
+    let distance_metric_str = format_str_option(category.distance_metric.as_ref());
     let fields_content = category
         .fields
         .iter()
@@ -90,23 +94,22 @@ fn generate_category(category: &Category) -> String {
         .collect::<String>();
 
     format!(
-        "Category {{ title: \"{}\", distance: {}, fields: &[{}], }},",
+        "Category {{ title: \"{}\", distance: {}, distance_metric: {}, fields: &[{}], }},",
         escape_string(&category.title),
         distance_str,
+        distance_metric_str,
         fields_content
     )
 }
 
 fn generate_field(field: &Field) -> String {
-    let description_str = format_option(field.description.as_ref(), |d| {
-        format!("Some(\"{}\")", escape_string(d))
-    });
-
     format!(
-        "Field {{ id: \"{}\", label: \"{}\", description: {}, }},",
+        "Field {{ id: \"{}\", label: \"{}\", label_metric: {}, description: {}, description_metric: {}, }},",
         escape_string(&field.id),
         escape_string(&field.label),
-        description_str
+        format_str_option(field.label_metric.as_ref()),
+        format_str_option(field.description.as_ref()),
+        format_str_option(field.description_metric.as_ref()),
     )
 }
 
@@ -132,11 +135,11 @@ fn generate_helper_function(game_mode: &GameMode) -> String {
     )
 }
 
-fn format_option<T, F>(option: Option<&T>, formatter: F) -> String
-where
-    F: FnOnce(&T) -> String,
-{
-    option.map(formatter).unwrap_or_else(|| "None".to_string())
+fn format_str_option(option: Option<&String>) -> String {
+    option.map_or_else(
+        || "None".to_string(),
+        |s| format!("Some(\"{}\")", escape_string(s)),
+    )
 }
 
 fn escape_string(s: &str) -> String {

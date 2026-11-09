@@ -1,6 +1,7 @@
 use crate::{
-    components::{ClearButton, ExportButton, Header, Navbar},
+    components::{ClearButton, ExportButton, Header, Navbar, UnitsToggle},
     pages::{Matching, Measuring, NotFound, Photographic, Radar, Tentacles, Thermo},
+    units::{Units, UnitsContext},
 };
 use yew::prelude::*;
 use yew_router::prelude::*;
@@ -56,17 +57,21 @@ fn switch(routes: &Route) -> Html {
 
 #[function_component(App)]
 pub fn app() -> Html {
+    let units = use_state(Units::load);
     html! {
-        <BrowserRouter>
-            <main>
-                <Header />
-                <Navbar />
-                <Switch<Route> render={|routes| switch(&routes)} />
-                <div class="buttons">
-                    <ClearButton />
-                    <ExportButton />
-                </div>
-            </main>
-        </BrowserRouter>
+        <ContextProvider<UnitsContext> context={units}>
+            <BrowserRouter>
+                <main>
+                    <Header />
+                    <Navbar />
+                    <UnitsToggle />
+                    <Switch<Route> render={|routes| switch(&routes)} />
+                    <div class="buttons">
+                        <ClearButton />
+                        <ExportButton />
+                    </div>
+                </main>
+            </BrowserRouter>
+        </ContextProvider<UnitsContext>>
     }
 }

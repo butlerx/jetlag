@@ -1,8 +1,9 @@
-use crate::{components::PersistentInput, constants};
+use crate::{components::PersistentInput, constants, units::use_units};
 use yew::prelude::*;
 
 #[function_component(Thermo)]
 pub fn thermo_mode() -> Html {
+    let units = use_units();
     let constants::GameMode { title, categories } = constants::thermometer_mode();
 
     html! {
@@ -27,7 +28,7 @@ pub fn thermo_mode() -> Html {
                     { for cat.fields.iter().map(|item| html! {
                         <PersistentInput
                             id={format!("{}.{}", title, item.id)}
-                            label={ item.label }
+                            label={ item.label(units) }
                         />
                      }) }
                 </div>

@@ -4,6 +4,7 @@ mod components;
 mod constants;
 mod pages;
 mod storage;
+mod units;
 
 use app::{App, Route};
 
