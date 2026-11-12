@@ -1,8 +1,9 @@
-use crate::{components::PersistentCheckbox, constants};
+use crate::{components::PersistentCheckbox, constants, units::use_units};
 use yew::prelude::*;
 
 #[function_component(Photographic)]
 pub fn photos_mode() -> Html {
+    let units = use_units();
     let constants::GameMode { title, categories } = constants::photos_mode();
     html! {
         <div class="game-page">
@@ -27,8 +28,8 @@ pub fn photos_mode() -> Html {
                                 {
                                     for cat.fields.iter().map(|item| html! {
                                         <PersistentCheckbox id={format!("{}.{}", title, item.id)} >
-                                            {item.label}
-                                            <div class="subtext">{item.description}</div>
+                                            {item.label(units)}
+                                            <div class="subtext">{item.description(units)}</div>
                                         </PersistentCheckbox>
                                     })
                                 }

@@ -1,11 +1,13 @@
 use crate::{
     components::{PersistentInput, PersistentInputCustomLabel},
     constants,
+    units::use_units,
 };
 use yew::prelude::*;
 
 #[function_component(Radar)]
 pub fn radar_mode() -> Html {
+    let units = use_units();
     let constants::GameMode { title, categories } = constants::radar_mode();
 
     let inputs = categories[0]
@@ -13,7 +15,7 @@ pub fn radar_mode() -> Html {
         .iter()
         .filter(|item| item.id != "choose")
         .map(|item|
-            html! { <PersistentInput id={format!("{}.{}", title, item.id)} label={item.label} /> }
+            html! { <PersistentInput id={format!("{}.{}", title, item.id)} label={item.label(units)} /> }
         );
 
     html! {

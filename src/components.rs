@@ -5,6 +5,7 @@ mod navbar;
 mod persistent_checkbox;
 mod persistent_input;
 mod persistent_input_custom;
+mod units_toggle;
 
 pub use clear_game::ClearButton;
 pub use export_game::ExportButton;
@@ -13,3 +14,4 @@ pub use navbar::Navbar;
 pub use persistent_checkbox::PersistentCheckbox;
 pub use persistent_input::PersistentInput;
 pub use persistent_input_custom::PersistentInputCustomLabel;
+pub use units_toggle::UnitsToggle;

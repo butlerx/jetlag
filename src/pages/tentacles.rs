@@ -1,8 +1,9 @@
-use crate::{components::PersistentInput, constants};
+use crate::{components::PersistentInput, constants, units::use_units};
 use yew::prelude::*;
 
 #[function_component(Tentacles)]
 pub fn tentacles_mode() -> Html {
+    let units = use_units();
     let constants::GameMode { title, categories } = constants::tentacles_mode();
 
     html! {
@@ -32,12 +33,12 @@ pub fn tentacles_mode() -> Html {
                 <div class="category">
                     <div class="category-title">
                         { cat.title }{ ": " }
-                        <span>{ format!("{} Miles", cat.distance.unwrap_or(0)) }</span>
+                        <span>{ cat.distance(units).unwrap_or_default() }</span>
                     </div>
                     { for cat.fields.iter().map(|item| html! {
                         <PersistentInput
                             id={format!("{}.{}", title, item.id)}
-                            label={ item.label }
+                            label={ item.label(units) }
                         />
                     }) }
                 </div>

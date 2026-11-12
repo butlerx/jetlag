@@ -205,10 +205,12 @@ title = "All Games"
 [[game_modes.categories.fields]]
 id = "half-mile"
 label = "🔥 ½ Mile"
+label_metric = "🔥 800 m"
 
 [[game_modes.categories.fields]]
 id = "three-miles"
 label = "🔥 3 Miles"
+label_metric = "🔥 4.8 km"
 
 [[game_modes.categories]]
 title = "Medium Games"
@@ -216,6 +218,7 @@ title = "Medium Games"
 [[game_modes.categories.fields]]
 id = "ten-miles"
 label = "🌡️ 10 Miles"
+label_metric = "🌡️ 16 km"
 
 [[game_modes.categories]]
 title = "Large Games"
@@ -223,6 +226,7 @@ title = "Large Games"
 [[game_modes.categories.fields]]
 id = "fifty-miles"
 label = "❄️ 50 Miles"
+label_metric = "❄️ 80 km"
 
 [[game_modes]]
 title = "radar"
@@ -233,38 +237,47 @@ title = "All Games"
 [[game_modes.categories.fields]]
 id = "quarter-mile"
 label = "📍 ¼ Mile"
+label_metric = "📍 400 m"
 
 [[game_modes.categories.fields]]
 id = "half-mile"
 label = "📍 ½ Mile"
+label_metric = "📍 800 m"
 
 [[game_modes.categories.fields]]
 id = "one-mile"
 label = "📍 1 Mile"
+label_metric = "📍 1.6 km"
 
 [[game_modes.categories.fields]]
 id = "three-miles"
 label = "📍 3 Miles"
+label_metric = "📍 4.8 km"
 
 [[game_modes.categories.fields]]
 id = "five-miles"
 label = "📍 5 Miles"
+label_metric = "📍 8 km"
 
 [[game_modes.categories.fields]]
 id = "ten-miles"
 label = "🔍 10 Miles"
+label_metric = "🔍 16 km"
 
 [[game_modes.categories.fields]]
 id = "twenty-five-miles"
 label = "🔍 25 Miles"
+label_metric = "🔍 40 km"
 
 [[game_modes.categories.fields]]
 id = "fifty-miles"
 label = "🌐 50 Miles"
+label_metric = "🌐 80 km"
 
 [[game_modes.categories.fields]]
 id = "hundred-miles"
 label = "🌐 100 Miles"
+label_metric = "🌐 160 km"
 
 [[game_modes.categories.fields]]
 id = "choose"
@@ -275,7 +288,8 @@ title = "tentacles"
 
 [[game_modes.categories]]
 title = "Medium & Large Games"
-distance = 1
+distance = "1 Mile"
+distance_metric = "1.6 km"
 
 [[game_modes.categories.fields]]
 id = "museums"
@@ -295,7 +309,8 @@ label = "🏥 Hospitals"
 
 [[game_modes.categories]]
 title = "Large Games Only"
-distance = 15
+distance = "15 Miles"
+distance_metric = "24 km"
 
 [[game_modes.categories.fields]]
 id = "metro-lines"
@@ -376,11 +391,13 @@ description = "No zoom. Must take the picture through the window from outside th
 id = "train-platform"
 label = "🚆 Train Platform"
 description = "Must include a 5' x 5' section with three distinct elements."
+description_metric = "Must include a 1.5 m x 1.5 m section with three distinct elements."
 
 [[game_modes.categories.fields]]
 id = "park"
 label = "🌲 Park"
 description = "No zoom, phone perpendicular to ground. Must stand 5' from any obstruction."
+description_metric = "No zoom, phone perpendicular to ground. Must stand 1.5 m from any obstruction."
 
 [[game_modes.categories.fields]]
 id = "grocery-store"
@@ -391,6 +408,7 @@ description = "No zoom. Stand at the end of the aisle, shoot directly down."
 id = "place-of-worship"
 label = "🏛️ Place of Worship"
 description = "Must include a 5' x 5' section with three distinct elements."
+description_metric = "Must include a 1.5 m x 1.5 m section with three distinct elements."
 
 [[game_modes.categories]]
 title = "Add for Large"
@@ -398,6 +416,7 @@ title = "Add for Large"
 [[game_modes.categories.fields]]
 id = "streets-traced"
 label = "🗺️ ½ Mile of Streets Traced"
+label_metric = "🗺️ 800 m of Streets Traced"
 description = "Must be continuous, including 5 turns, no doubling back. Send N-S oriented. Streets must appear on mapping app."
 
 [[game_modes.categories.fields]]

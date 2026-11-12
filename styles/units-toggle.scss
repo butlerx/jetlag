@@ -1,0 +1,31 @@
+.units-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.units-option {
+  background: white;
+  border: 1px solid var(--jetlag-primary);
+  color: var(--jetlag-dark);
+  cursor: pointer;
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 6px 12px;
+  text-transform: uppercase;
+}
+
+.units-option:first-child {
+  border-radius: 6px 0 0 6px;
+}
+
+.units-option:last-child {
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+}
+
+.units-option.active {
+  background-color: var(--jetlag-primary);
+  color: white;
+}
