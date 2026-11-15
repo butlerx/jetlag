@@ -9,19 +9,11 @@ freeze        = true
 [[repos]]
 repo  = "https://github.com/pre-commit/pre-commit-hooks"
 rev   = "3e8a8703264a2f4a69428a0aa4dcb512790b2c8c"
-hooks = [
-  { id = "trailing-whitespace" },
-  { id = "end-of-file-fixer" },
-  { id = "check-toml" },
-  { id = "check-yaml" },
-  { id = "check-json" },
-  { id = "check-merge-conflict" },
-  { id = "check-added-large-files", exclude = "(?x).png" }
-]
+hooks = [{ id = "trailing-whitespace" }, { id = "end-of-file-fixer" }, { id = "check-toml" }, { id = "check-yaml" }, { id = "check-json" }, { id = "check-merge-conflict" }, { id = "check-added-large-files", exclude = "(?x).png" }]
 
 [[repos]]
 repo  = "https://github.com/tombi-toml/tombi-pre-commit"
-rev   = "5421ca8ca3d6a659b6c097512b486395676a6af1"
+rev   = "6f428aba5ced98b5a579ff23cab6b39822b4347d"
 hooks = [{ id = "tombi-format" }, { id = "tombi-lint" }]
 
 [[repos]]
@@ -37,36 +29,18 @@ hooks = [{ id = "yamlfmt" }]
 [[repos]]
 repo  = "https://github.com/zizmorcore/zizmor-pre-commit"
 rev   = "067260dc5fe6ea86b7551bfd6f8b3ba4e6c93129"
-hooks = [
-  {
-    id             = "zizmor",
-    pass_filenames = false,
-    args           = ["--no-progress", ".github"]
-  }
-]
+hooks = [{ id = "zizmor", pass_filenames = false, args = ["--no-progress", ".github"] }]
 
 [[repos]]
 repo  = "https://github.com/doublify/pre-commit-rust"
 rev   = "eeee35a89e69d5772bdee97db1a6a898467b686e"
-hooks = [
-  { id = "fmt" },
-  {
-    id   = "clippy",
-    args = ["--all-targets", "--all-features", "--", "-D", "warnings"]
-  }
-]
+hooks = [{ id = "fmt" }, { id = "clippy", args = ["--all-targets", "--all-features", "--", "-D", "warnings"] }]
 
 [[repos]]
 repo  = "local"
 hooks = [
   # yew-fmt also formats html! macro bodies, so it runs after rustfmt.
-  {
-    id       = "yew-fmt",
-    name     = "yew-fmt",
-    language = "system",
-    entry    = "yew-fmt",
-    types    = ["rust"]
-  }
+  { id = "yew-fmt", name = "yew-fmt", language = "system", entry = "yew-fmt", types = ["rust"] }
 ]
 
 [[repos]]
