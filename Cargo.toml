@@ -1,40 +1,43 @@
 [package]
-name = "jetlag"
-version = "0.1.0"
-edition = "2021"
+name        = "jetlag"
+version     = "0.1.0"
+edition     = "2021"
 description = "An unofficial investigation book web app for tracking your notes and investigations while playing 'Jet Lag: The Game - Hide + Seek' home edition."
-readme = "README.md"
-authors = ["Cian Butler <butlerx@notthe.cloud>"]
-repository = "https://github.com/butlerx/jetlag"
-license = "MIT"
-keywords = [
+readme      = "README.md"
+authors     = ["Cian Butler <butlerx@notthe.cloud>"]
+repository  = "https://github.com/butlerx/jetlag"
+license     = "MIT"
+keywords    = [
+  "hide-and-seek",
   "jetlag",
   "jetlagthegame",
-  "hide-and-seek",
-  "yew",
   "rust",
-  "web",
   "wasm",
+  "web",
+  "yew",
 ]
-categories = ["wasm", "web", "game", "simple"]
+categories  = ["game", "simple", "wasm", "web"]
 
 [dependencies]
-gloo-utils = "0.2"
-implicit-clone = { version = "0.4", features = ["serde", "map"] }
-js-sys = "0.3"
-log = "0.4.27"
-thiserror = "2"
-wasm-bindgen = "0.2"
-wasm-logger = "0.2.0"
-web-sys = { version = "0.3", features = [
-  "HtmlAnchorElement",
-  "Window",
-  "Blob",
-  "Url",
-] }
-yew = { version = "0.21", features = ["csr"] }
-yew-router = "0.18"
+gloo-utils     = "0.2"
+implicit-clone = { version = "0.4", features = ["map", "serde"] }
+js-sys         = "0.3"
+log            = "0.4.27"
+thiserror      = "2"
+wasm-bindgen   = "0.2"
+wasm-logger    = "0.2.0"
+web-sys        = {
+  version  = "0.3",
+  features = [
+    "Blob",
+    "HtmlAnchorElement",
+    "Url",
+    "Window",
+  ]
+}
+yew            = { version = "0.21", features = ["csr"] }
+yew-router     = "0.18"
 
 [build-dependencies]
 serde = { version = "1.0", features = ["derive"] }
-toml = "0.8"
+toml  = "0.8"

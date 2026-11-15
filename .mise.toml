@@ -1,0 +1,102 @@
+min_version = "2026.9.12"
+
+[tools]
+rust                     = { version = "stable", profile = "default", components = "rust-analyzer", targets = "wasm32-unknown-unknown" }
+prek                     = "latest"
+shellcheck               = "latest"                                                                                                       # used by actionlint
+tombi                    = "latest"
+zizmor                   = "latest"
+"cargo:cargo-binstall"   = "latest"
+"cargo:cargo-audit"      = "latest"
+"cargo:trunk"            = "latest"
+"cargo:wasm-bindgen-cli" = "latest"
+"cargo:yew-fmt"          = "latest"
+
+[settings]
+experimental   = true
+lockfile       = true
+cargo.binstall = true
+
+[tasks.hooks]
+description = "Install the git hooks that CI also runs"
+quiet       = true
+run         = "prek install --install-hooks --hook-type pre-commit --hook-type commit-msg"
+
+[tasks.dev]
+description = "Start development server with hot-reload"
+run         = "trunk serve --public-url /jetlag"
+alias       = "d"
+
+[tasks.build]
+description = "Build for production"
+usage       = 'arg "<public_url>" var=#true help="Public URL for the built assets (e.g., jetlag)"'
+run         = "trunk build --release --public-url /${usage_public_url}"
+alias       = "b"
+sources     = [
+  "Cargo.lock",
+  "Cargo.toml",
+  "build.rs",
+  "game_modes.toml",
+  "index.html",
+  "index.scss",
+  "src/**/*.rs",
+  "static/**/*",
+  "styles/**/*.scss",
+]
+outputs     = ["dist/"]
+
+[tasks.test]
+description = "Run tests"
+usage       = 'arg "[args]" var=#true help="Additional arguments passed to cargo test"'
+run         = "cargo test --all-features ${usage_args:-}"
+alias       = "t"
+sources     = ["Cargo.lock", "Cargo.toml", "build.rs", "game_modes.toml", "src/**/*.rs"]
+
+[tasks.lint]
+description = "prek: rustfmt, yew-fmt, clippy, tombi, yamlfmt, actionlint, zizmor"
+quiet       = true
+run         = "prek run --all-files"
+
+[tasks."lint:fix"]
+description = "Auto-fix what the hooks can fix"
+quiet       = true
+run         = [
+  "prek run --all-files trailing-whitespace end-of-file-fixer rustfmt yew-fmt tombi-format yamlfmt || true",
+  "cargo clippy --fix --all-targets --all-features --allow-staged -- -D warnings",
+]
+
+[tasks.format]
+description = "Format Rust (rustfmt + yew-fmt), TOML and YAML"
+quiet       = true
+alias       = "f"
+run         = "prek run --all-files rustfmt yew-fmt tombi-format yamlfmt"
+
+[tasks.audit]
+description = "Audit dependencies for known vulnerabilities"
+run         = "cargo audit"
+
+[tasks.check]
+description = "Everything CI runs: hooks, tests, audit, release build"
+depends     = ["ci:lint", "ci:test", "ci:build"]
+quiet       = true
+
+[tasks.clean]
+description = "Clean build artifacts"
+run         = "rm -rf target dist"
+
+[tasks."ci:lint"]
+depends = ["lint", "audit"]
+hide    = true
+quiet   = true
+
+[tasks."ci:test"]
+depends = ["test"]
+hide    = true
+quiet   = true
+
+[tasks."ci:build"]
+description = "Release build served from /<repo name>, as GitHub Pages does"
+usage       = 'arg "[public_url]" default="jetlag"'
+hide        = true
+quiet       = true
+run         = "mise run build ${usage_public_url}"
