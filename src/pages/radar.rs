@@ -14,9 +14,11 @@ pub fn radar_mode() -> Html {
         .fields
         .iter()
         .filter(|item| item.id != "choose")
-        .map(|item|
-            html! { <PersistentInput id={format!("{}.{}", title, item.id)} label={item.label(units)} /> }
-        );
+        .map(|item| {
+            let id = format!("{title}.{}", item.id);
+            let label = item.label(units);
+            html! { <PersistentInput {id} {label} /> }
+        });
 
     html! {
         <div class="game-page">

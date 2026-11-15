@@ -33,47 +33,28 @@ _No downloads, no setup, just pure jetlag fun!_
 Want to tinker under the hood or contribute to the investigation? Here's your
 mission:
 
-**Step 1: Gear Up** 🎒 Install Rust:
+**Step 1: Gear Up** 🎒 Install [mise](https://mise.jdx.dev). It handles Rust,
+the WebAssembly target, Trunk and the rest of the toolkit.
 
-```
-🔗 https://www.rust-lang.org/tools/install
-```
-
-**Step 2: Acquire Special Equipment** 🔧 Add the WebAssembly target to your
-arsenal:
-
-```bash
-rustup target add wasm32-unknown-unknown
-```
-
-**Step 3: Infiltrate the Repository** 🕵️ Clone the secret files:
+**Step 2: Infiltrate the Repository** 🕵️ Clone the secret files:
 
 ```bash
 git clone https://github.com/butlerx/jetlag.git
-```
-
-**Step 4: Enter the Command Center** 📍 Navigate to mission headquarters:
-
-```bash
 cd jetlag
 ```
 
-**Step 5: Deploy Additional Tools** ⚡ Install the pinned
-[Trunk](https://trunk-rs.github.io/trunk/) version with
-[mise](https://mise.jdx.dev):
+**Step 3: Acquire Special Equipment** 🔧 Install the pinned tools:
 
 ```bash
 mise install
 ```
-
-_No mise? `cargo install trunk --version 0.21.14 --locked` works too._
 
 ### 🚁 Launch Your Local Command Center
 
 Fire up your development server and watch the magic happen:
 
 ```bash
-trunk serve --public-url /jetlag
+mise dev
 ```
 
 🎉 **Boom!** Your investigation headquarters is now running at
@@ -86,10 +67,20 @@ _Pro tip: The server automatically reloads when you make changes_
 Ready to deploy? Create an optimized version:
 
 ```bash
-trunk build --release --public-url /jetlag
+mise build jetlag
 ```
 
 Your polished investigation tool will be waiting in the `dist` directory! 📦
+
+### 🧪 Field Checks
+
+Run everything CI runs (format, clippy, tests, audit) before you push:
+
+```bash
+mise run check
+```
+
+`mise tasks` lists the rest (`format`, `lint:fix`, `check:actions`, ...).
 
 ## 🔬 The Tech Behind the Magic
 

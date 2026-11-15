@@ -1,3 +1,0 @@
-[tools]
-# Rust `trunk` bundler. The bare "trunk" registry entry is Trunk.io's linter, so name the repo.
-"github:trunk-rs/trunk" = "0.21.14"
