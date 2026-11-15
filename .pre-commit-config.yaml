@@ -21,12 +21,6 @@ repos:
         stages:
           - commit-msg
 
-  - repo: https://github.com/tombi-toml/tombi-pre-commit
-    rev: f26bd20264b5e50a1b1755cc2585b3464ca5c3b9 # frozen: v1.10.0
-    hooks:
-      - id: tombi-format
-      - id: tombi-lint
-
   - repo: https://github.com/rhysd/actionlint
     rev: 914e7df21a07ef503a81201c76d2b11c789d3fca # frozen: v1.7.12
     hooks:
@@ -56,8 +50,20 @@ repos:
 
   - repo: local
     hooks:
-      # rustfmt, yew-fmt and clippy come from the toolchain mise installs, not a hook
-      # env, so the hooks and `mise run format` cannot disagree.
+      # tombi, rustfmt, yew-fmt and clippy come from the toolchain mise installs, not
+      # a hook env, so the hooks and an editor running the same tool cannot disagree.
+      - id: tombi-format
+        name: tombi format
+        language: system
+        entry: tombi format
+        types:
+          - toml
+      - id: tombi-lint
+        name: tombi lint
+        language: system
+        entry: tombi lint
+        types:
+          - toml
       - id: rustfmt
         name: rustfmt
         language: system
