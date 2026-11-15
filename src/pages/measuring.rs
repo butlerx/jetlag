@@ -7,7 +7,7 @@ pub fn measuring_mode() -> Html {
     html! {
         <div class="game-page">
             <div class="game-header">
-                <div class="game-title">{ &title }</div>
+                <div class="game-title">{ title }</div>
                 <div class="game-info">
                     { "Cost: " }
                     <span>{ "Draw 3, Pick 1" }</span>
@@ -20,7 +20,7 @@ pub fn measuring_mode() -> Html {
             </div>
             { for categories.iter().map(|cat| html! {
                     <div class="category">
-                        <div class="category-title">{ &cat.title }{":"}</div>
+                        <div class="category-title">{ cat.title }{":"}</div>
                         { for cat.fields.iter().map(|item| html! {
                             <PersistentInput
                                 id={format!("{}.{}", title, item.id)}
