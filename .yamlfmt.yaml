@@ -1,6 +1,5 @@
 # yamlfmt picks up ~/.yamlfmt.yaml when a repo has no config, so CI (which has
 # no home config) formatted differently to a local run. Pin the settings here.
-# Line length matches .yamllint.yaml.
 line_ending: lf
 formatter:
   type: basic

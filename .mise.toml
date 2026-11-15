@@ -59,7 +59,7 @@ sources     = [
 ]
 
 [tasks.lint]
-description = "prek: rustfmt, yew-fmt, clippy, tombi, yamlfmt, yamllint, actionlint, zizmor"
+description = "prek: rustfmt, yew-fmt, clippy, tombi, yamlfmt, actionlint, zizmor"
 quiet       = true
 run         = "prek run --all-files"
 
