@@ -133,7 +133,7 @@ url_api = "https://api.github.com/repos/koalaman/shellcheck/releases/assets/2790
 [[tools.tombi]]
 version = "1.11.2"
 backend = "aqua:tombi-toml/tombi"
-specifiers = ["latest"]
+specifiers = ["1.11.2"]
 
 [tools.tombi."platforms.linux-arm64"]
 checksum = "sha256:14122e634113d2d9b1210b3f01d5139289575494a2d585824e1e51e116a58d96"
