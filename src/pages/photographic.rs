@@ -8,7 +8,7 @@ pub fn photos_mode() -> Html {
     html! {
         <div class="game-page">
             <div class="game-header">
-                <div class="game-title">{ &title }</div>
+                <div class="game-title">{ title }</div>
                 <div class="game-info">
                     { "Cost: " }
                     <span>{ "Draw 1" }</span>
@@ -23,7 +23,7 @@ pub fn photos_mode() -> Html {
             </div>
             { for categories.iter().map(|cat| html! {
                     <div class="category">
-                        <div class="category-title">{ &cat.title }{":"}</div>
+                        <div class="category-title">{ cat.title }{":"}</div>
                             <div class="photo-options">
                                 {
                                     for cat.fields.iter().map(|item| html! {
