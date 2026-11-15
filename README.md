@@ -47,7 +47,12 @@ cd jetlag
 
 ```bash
 mise install
+mise run hooks
 ```
+
+`mise run hooks` installs the [prek](https://prek.j178.dev) git hooks, so
+every commit gets the same formatting and lint checks CI runs. Commit messages
+follow [Conventional Commits](https://www.conventionalcommits.org).
 
 ### 🚁 Launch Your Local Command Center
 
@@ -74,13 +79,14 @@ Your polished investigation tool will be waiting in the `dist` directory! 📦
 
 ### 🧪 Field Checks
 
-Run everything CI runs (format, clippy, tests, audit) before you push:
+Run everything CI runs (hooks, clippy, tests, audit, release build) before you
+push:
 
 ```bash
 mise run check
 ```
 
-`mise tasks` lists the rest (`format`, `lint:fix`, `check:actions`, ...).
+`mise tasks` lists the rest (`format`, `lint`, `lint:fix`, `audit`, ...).
 
 ## 🔬 The Tech Behind the Magic
 

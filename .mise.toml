@@ -1,5 +1,9 @@
+min_version = "2026.9.12"
+
 [tools]
 rust                     = { version = "stable", profile = "default", components = "rust-analyzer", targets = "wasm32-unknown-unknown" }
+prek                     = "latest"
+shellcheck               = "latest"                                                                                                       # used by actionlint
 tombi                    = "latest"
 zizmor                   = "latest"
 "cargo:cargo-binstall"   = "latest"
@@ -12,6 +16,11 @@ zizmor                   = "latest"
 experimental   = true
 lockfile       = true
 cargo.binstall = true
+
+[tasks.hooks]
+description = "Install the git hooks that CI also runs"
+quiet       = true
+run         = "prek install --install-hooks --hook-type pre-commit --hook-type commit-msg"
 
 [tasks.dev]
 description = "Start development server with hot-reload"
@@ -28,11 +37,11 @@ sources     = [
   "Cargo.toml",
   "build.rs",
   "game_modes.toml",
+  "index.html",
+  "index.scss",
   "src/**/*.rs",
   "static/**/*",
   "styles/**/*.scss",
-  "index.html",
-  "index.scss",
 ]
 outputs     = ["dist/"]
 
@@ -50,42 +59,50 @@ sources     = [
 ]
 
 [tasks.lint]
-description = "Lint code with clippy"
-usage       = 'arg "[args]" var=#true help="Additional arguments passed to cargo clippy"'
-run         = "cargo clippy --all-targets --all-features ${usage_args:-} -- -D warnings"
+description = "prek: rustfmt, yew-fmt, clippy, tombi, yamlfmt, yamllint, actionlint, zizmor"
+quiet       = true
+run         = "prek run --all-files"
 
 [tasks."lint:fix"]
-description = "Fix lint issues"
-usage       = 'arg "[args]" var=#true help="Additional arguments passed to cargo clippy"'
-run         = "cargo clippy --fix --all-targets --all-features --allow-staged ${usage_args:-} -- -D warnings"
+description = "Auto-fix what the hooks can fix"
+quiet       = true
+run         = [
+  "prek run --all-files trailing-whitespace end-of-file-fixer rustfmt yew-fmt tombi-format yamlfmt || true",
+  "cargo clippy --fix --all-targets --all-features --allow-staged -- -D warnings",
+]
 
 [tasks.format]
-description = "Format code"
-run         = ["cargo fmt", "yew-fmt src/**/*.rs", "tombi format"]
+description = "Format Rust (rustfmt + yew-fmt), TOML and YAML"
+quiet       = true
 alias       = "f"
-sources     = ["src/**/*.rs", "*.toml"]
-
-[tasks."format:check"]
-description = "Check code formatting"
-run         = [
-  "cargo fmt --check",
-  "yew-fmt --check src/**/*.rs",
-  "tombi format --check",
-]
-sources     = ["src/**/*.rs", "*.toml"]
+run         = "prek run --all-files rustfmt yew-fmt tombi-format yamlfmt"
 
 [tasks.audit]
 description = "Audit dependencies for known vulnerabilities"
 run         = "cargo audit"
 
 [tasks.check]
-description = "Run all checks (format, lint, test, audit)"
-depends     = ["format:check", "lint", "test", "audit"]
-
-[tasks."check:actions"]
-description = "Lint GitHub Actions workflows"
-run         = "zizmor .github/"
+description = "Everything CI runs: hooks, tests, audit, release build"
+depends     = ["ci:lint", "ci:test", "ci:build"]
+quiet       = true
 
 [tasks.clean]
 description = "Clean build artifacts"
 run         = "rm -rf target dist"
+
+[tasks."ci:lint"]
+depends = ["lint", "audit"]
+hide    = true
+quiet   = true
+
+[tasks."ci:test"]
+depends = ["test"]
+hide    = true
+quiet   = true
+
+[tasks."ci:build"]
+description = "Release build served from /<repo name>, as GitHub Pages does"
+usage       = 'arg "[public_url]" default="jetlag"'
+hide        = true
+quiet       = true
+run         = "mise run build ${usage_public_url}"
