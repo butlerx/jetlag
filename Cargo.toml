@@ -19,10 +19,10 @@ keywords    = [
 categories  = ["game", "simple", "wasm", "web"]
 
 [dependencies]
-gloo-utils     = "0.2"
-implicit-clone = { version = "0.4", features = ["map", "serde"] }
+gloo-utils     = "0.3"
+implicit-clone = { version = "0.6", features = ["map", "serde"] }
 js-sys         = "0.3"
-log            = "0.4.27"
+log            = "0.4.35"
 thiserror      = "2"
 wasm-bindgen   = "0.2"
 wasm-logger    = "0.2.0"
@@ -35,9 +35,9 @@ web-sys        = {
     "Window",
   ]
 }
-yew            = { version = "0.21", features = ["csr"] }
-yew-router     = "0.18"
+yew            = { version = "0.23", features = ["csr"] }
+yew-router     = "0.20"
 
 [build-dependencies]
 serde = { version = "1.0", features = ["derive"] }
-toml  = "0.8"
+toml  = "1"
