@@ -3,22 +3,22 @@
 lockfile_version = 3
 
 [[tools."cargo:cargo-audit"]]
-version = "0.22.2"
+version = "0.23.0"
 backend = "cargo:cargo-audit"
 specifiers = ["latest"]
 
 [[tools."cargo:cargo-binstall"]]
-version = "1.17.6"
+version = "1.27.0"
 backend = "cargo:cargo-binstall"
 specifiers = ["latest"]
 
 [[tools."cargo:trunk"]]
-version = "0.21.14"
+version = "0.22.1"
 backend = "cargo:trunk"
 specifiers = ["latest"]
 
 [[tools."cargo:wasm-bindgen-cli"]]
-version = "0.2.121"
+version = "0.2.130"
 backend = "cargo:wasm-bindgen-cli"
 specifiers = ["latest"]
 
@@ -28,50 +28,50 @@ backend = "cargo:yew-fmt"
 specifiers = ["latest"]
 
 [[tools.prek]]
-version = "0.4.14"
+version = "0.5.10"
 backend = "aqua:j178/prek"
 specifiers = ["latest"]
 
 [tools.prek."platforms.linux-arm64"]
-checksum = "sha256:a0302d10599f40eb1b46bfe28cfe04c2638f0af858787d21c5904acc8047aaff"
-url = "https://github.com/j178/prek/releases/download/v0.4.14/prek-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/j178/prek/releases/assets/517620521"
+checksum = "sha256:6ee3e5696f0b76bb4c95708579a54714aabd9a20e89c998f69a1a5cc41dbbbee"
+url = "https://github.com/j178/prek/releases/download/v0.5.10/prek-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/j178/prek/releases/assets/707839366"
 provenance = "github-attestations"
 
 [tools.prek."platforms.linux-arm64-musl"]
-checksum = "sha256:27a873abf78df8ec842829f6def4356f1f10c8ddf1741c6b2b3ba0c1e1e93f95"
-url = "https://github.com/j178/prek/releases/download/v0.4.14/prek-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/j178/prek/releases/assets/517620523"
+checksum = "sha256:352b97c18cc1659786232f3fde9e75b5ec96279893563f6b31b36f2d43dca00f"
+url = "https://github.com/j178/prek/releases/download/v0.5.10/prek-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/j178/prek/releases/assets/707839372"
 provenance = "github-attestations"
 
 [tools.prek."platforms.linux-x64"]
-checksum = "sha256:d1eacb826b9f71ce9098636d2c3e96df0ed1cf08c9c17c57bf358b401f5a995d"
-url = "https://github.com/j178/prek/releases/download/v0.4.14/prek-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/j178/prek/releases/assets/517620600"
+checksum = "sha256:5c832a9ccd0855b7c054320d8921d90165a37459d3ac175923bdf121ff1aa9b1"
+url = "https://github.com/j178/prek/releases/download/v0.5.10/prek-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/j178/prek/releases/assets/707839458"
 provenance = "github-attestations"
 
 [tools.prek."platforms.linux-x64-musl"]
-checksum = "sha256:388f2e5216684c22e635dc1bde1bac5bd008a5dfc21c754ced382d19ff31413b"
-url = "https://github.com/j178/prek/releases/download/v0.4.14/prek-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/j178/prek/releases/assets/517620606"
+checksum = "sha256:c70a639cb98c90feafa213c23fb487644af73c906c5a6cee757403090f253c30"
+url = "https://github.com/j178/prek/releases/download/v0.5.10/prek-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/j178/prek/releases/assets/707839467"
 provenance = "github-attestations"
 
 [tools.prek."platforms.macos-arm64"]
-checksum = "sha256:87f7fb2b99871820eb352d9a2327461d25affe354d6d48c4edf3a34f360c6be8"
-url = "https://github.com/j178/prek/releases/download/v0.4.14/prek-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/j178/prek/releases/assets/517620513"
+checksum = "sha256:28186099374a3158e7b27e82fedb0bd20723658dc8ee24a841bdffe8a91b1ad9"
+url = "https://github.com/j178/prek/releases/download/v0.5.10/prek-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/j178/prek/releases/assets/707839320"
 provenance = "github-attestations"
 
 [tools.prek."platforms.macos-x64"]
-checksum = "sha256:59073820f5145cea2fa91b7e4256bbab6ed44de364d4b6809311d7ee9653d3b7"
-url = "https://github.com/j178/prek/releases/download/v0.4.14/prek-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/j178/prek/releases/assets/517620585"
+checksum = "sha256:bbd0cb4b8d2dea949730ba631e5176e99507e5d799464ea8d71386af98bdcb0a"
+url = "https://github.com/j178/prek/releases/download/v0.5.10/prek-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/j178/prek/releases/assets/707839419"
 provenance = "github-attestations"
 
 [tools.prek."platforms.windows-x64"]
-checksum = "sha256:284eb3b185788fbb5c1b53b1e2217c744be44debaff88efd305b1947df6f0b82"
-url = "https://github.com/j178/prek/releases/download/v0.4.14/prek-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/j178/prek/releases/assets/517620593"
+checksum = "sha256:4a506e19a95a1bbf40f304b245446c32078c7be4d5b7e4cb412ea93a0cf8b4e5"
+url = "https://github.com/j178/prek/releases/download/v0.5.10/prek-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/j178/prek/releases/assets/707839436"
 provenance = "github-attestations"
 
 [[tools.rust]]
@@ -131,95 +131,95 @@ url = "https://github.com/koalaman/shellcheck/releases/download/v0.11.0/shellche
 url_api = "https://api.github.com/repos/koalaman/shellcheck/releases/assets/279056944"
 
 [[tools.tombi]]
-version = "1.2.5"
+version = "1.11.2"
 backend = "aqua:tombi-toml/tombi"
 specifiers = ["latest"]
 
 [tools.tombi."platforms.linux-arm64"]
-checksum = "sha256:0fa62b48aba40759e88a77e86ed20871819f0c15d9566cd56b17b71ece8b836b"
-url = "https://github.com/tombi-toml/tombi/releases/download/v1.2.5/tombi-cli-1.2.5-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/tombi-toml/tombi/releases/assets/496096092"
+checksum = "sha256:14122e634113d2d9b1210b3f01d5139289575494a2d585824e1e51e116a58d96"
+url = "https://github.com/tombi-toml/tombi/releases/download/v1.11.2/tombi-cli-1.11.2-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/tombi-toml/tombi/releases/assets/731865789"
 provenance = "github-attestations"
 
 [tools.tombi."platforms.linux-arm64-musl"]
-checksum = "sha256:0fa62b48aba40759e88a77e86ed20871819f0c15d9566cd56b17b71ece8b836b"
-url = "https://github.com/tombi-toml/tombi/releases/download/v1.2.5/tombi-cli-1.2.5-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/tombi-toml/tombi/releases/assets/496096092"
+checksum = "sha256:14122e634113d2d9b1210b3f01d5139289575494a2d585824e1e51e116a58d96"
+url = "https://github.com/tombi-toml/tombi/releases/download/v1.11.2/tombi-cli-1.11.2-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/tombi-toml/tombi/releases/assets/731865789"
 provenance = "github-attestations"
 
 [tools.tombi."platforms.linux-x64"]
-checksum = "sha256:05385bdf47d10828c1fc27190ee0ad44b777a57f56ea95c9ef568c845e3b7872"
-url = "https://github.com/tombi-toml/tombi/releases/download/v1.2.5/tombi-cli-1.2.5-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/tombi-toml/tombi/releases/assets/496096100"
+checksum = "sha256:8bb862497e99b415310ede463ee6cf997845368d3e6d4edac4dd33b07084beb3"
+url = "https://github.com/tombi-toml/tombi/releases/download/v1.11.2/tombi-cli-1.11.2-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/tombi-toml/tombi/releases/assets/731865894"
 provenance = "github-attestations"
 
 [tools.tombi."platforms.linux-x64-musl"]
-checksum = "sha256:05385bdf47d10828c1fc27190ee0ad44b777a57f56ea95c9ef568c845e3b7872"
-url = "https://github.com/tombi-toml/tombi/releases/download/v1.2.5/tombi-cli-1.2.5-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/tombi-toml/tombi/releases/assets/496096100"
+checksum = "sha256:8bb862497e99b415310ede463ee6cf997845368d3e6d4edac4dd33b07084beb3"
+url = "https://github.com/tombi-toml/tombi/releases/download/v1.11.2/tombi-cli-1.11.2-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/tombi-toml/tombi/releases/assets/731865894"
 provenance = "github-attestations"
 
 [tools.tombi."platforms.macos-arm64"]
-checksum = "sha256:e4c3dd5346650b80afa516b851e0bffb4ea8a8b51ced974712fd0dd10cb893ee"
-url = "https://github.com/tombi-toml/tombi/releases/download/v1.2.5/tombi-cli-1.2.5-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/tombi-toml/tombi/releases/assets/496096095"
+checksum = "sha256:035be0afc61549adbe9ce6b6ab582cfff99bcd6b86f38f847149c3819dc89d33"
+url = "https://github.com/tombi-toml/tombi/releases/download/v1.11.2/tombi-cli-1.11.2-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/tombi-toml/tombi/releases/assets/731865806"
 provenance = "github-attestations"
 
 [tools.tombi."platforms.macos-x64"]
-checksum = "sha256:b020e2daba5c563842578d164b66340251d5c1fac67106f496af4a4d30625f1e"
-url = "https://github.com/tombi-toml/tombi/releases/download/v1.2.5/tombi-cli-1.2.5-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/tombi-toml/tombi/releases/assets/496096094"
+checksum = "sha256:09ed72a2e8a5a57fa325f95942833692bdc838b4ca4c0964dfbad20da44553c3"
+url = "https://github.com/tombi-toml/tombi/releases/download/v1.11.2/tombi-cli-1.11.2-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/tombi-toml/tombi/releases/assets/731865783"
 provenance = "github-attestations"
 
 [tools.tombi."platforms.windows-x64"]
-checksum = "sha256:c338abcf1b1d088ad9436d3cc0a37d5ce82cde414de56ef693ceec2ce8aa3ec7"
-url = "https://github.com/tombi-toml/tombi/releases/download/v1.2.5/tombi-cli-1.2.5-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/tombi-toml/tombi/releases/assets/496096098"
+checksum = "sha256:fc059da801b0f6f6dd816eb4ede2a532d1562bc16c56cfe6557a9ecfa81a235a"
+url = "https://github.com/tombi-toml/tombi/releases/download/v1.11.2/tombi-cli-1.11.2-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/tombi-toml/tombi/releases/assets/731865844"
 provenance = "github-attestations"
 
 [[tools.zizmor]]
-version = "1.29.0"
+version = "1.32.0"
 backend = "aqua:zizmorcore/zizmor"
 specifiers = ["latest"]
 
 [tools.zizmor."platforms.linux-arm64"]
-checksum = "sha256:415eaa7c0a06479a701b8e44a3e812c1047decc848ec4bede7bd6bbf49f22d20"
-url = "https://github.com/zizmorcore/zizmor/releases/download/v1.29.0/zizmor-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/zizmorcore/zizmor/releases/assets/498263143"
+checksum = "sha256:cb152b207f815116d7fa1c1ee4614f61578803351395052908095e79adfd9fd0"
+url = "https://github.com/zizmorcore/zizmor/releases/download/v1.32.0/zizmor-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/zizmorcore/zizmor/releases/assets/703541931"
 provenance = "github-attestations"
 
 [tools.zizmor."platforms.linux-arm64-musl"]
-checksum = "sha256:415eaa7c0a06479a701b8e44a3e812c1047decc848ec4bede7bd6bbf49f22d20"
-url = "https://github.com/zizmorcore/zizmor/releases/download/v1.29.0/zizmor-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/zizmorcore/zizmor/releases/assets/498263143"
+checksum = "sha256:cb152b207f815116d7fa1c1ee4614f61578803351395052908095e79adfd9fd0"
+url = "https://github.com/zizmorcore/zizmor/releases/download/v1.32.0/zizmor-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/zizmorcore/zizmor/releases/assets/703541931"
 provenance = "github-attestations"
 
 [tools.zizmor."platforms.linux-x64"]
-checksum = "sha256:dd96df044a6e8538d5f423790f453bdd03d49e5b2bcc38214acc41a2f1297839"
-url = "https://github.com/zizmorcore/zizmor/releases/download/v1.29.0/zizmor-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/zizmorcore/zizmor/releases/assets/498263145"
+checksum = "sha256:bb110cc765eca9cd7efb2e284a956be5974c60027b0970f16397d86208a9957b"
+url = "https://github.com/zizmorcore/zizmor/releases/download/v1.32.0/zizmor-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/zizmorcore/zizmor/releases/assets/703541932"
 provenance = "github-attestations"
 
 [tools.zizmor."platforms.linux-x64-musl"]
-checksum = "sha256:dd96df044a6e8538d5f423790f453bdd03d49e5b2bcc38214acc41a2f1297839"
-url = "https://github.com/zizmorcore/zizmor/releases/download/v1.29.0/zizmor-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/zizmorcore/zizmor/releases/assets/498263145"
+checksum = "sha256:bb110cc765eca9cd7efb2e284a956be5974c60027b0970f16397d86208a9957b"
+url = "https://github.com/zizmorcore/zizmor/releases/download/v1.32.0/zizmor-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/zizmorcore/zizmor/releases/assets/703541932"
 provenance = "github-attestations"
 
 [tools.zizmor."platforms.macos-arm64"]
-checksum = "sha256:720322fade9e83a9c7953944c438f2ba942636b86b96a8f0e6b15ce94c8a6b6f"
-url = "https://github.com/zizmorcore/zizmor/releases/download/v1.29.0/zizmor-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/zizmorcore/zizmor/releases/assets/498263141"
+checksum = "sha256:6efed18c4539a663fd3c851a2be9533fd8456c4e646d9416206da059154a0d3c"
+url = "https://github.com/zizmorcore/zizmor/releases/download/v1.32.0/zizmor-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/zizmorcore/zizmor/releases/assets/703541933"
 provenance = "github-attestations"
 
 [tools.zizmor."platforms.macos-x64"]
-checksum = "sha256:648b72ab9941a7f2a8d65d7b68a8e76cef789538c8df3a3950384d38423375b0"
-url = "https://github.com/zizmorcore/zizmor/releases/download/v1.29.0/zizmor-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/zizmorcore/zizmor/releases/assets/498263144"
+checksum = "sha256:6983143c719ada6845a69cc4dd2bacc215f971662fecd8bbd2678388e5ce5969"
+url = "https://github.com/zizmorcore/zizmor/releases/download/v1.32.0/zizmor-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/zizmorcore/zizmor/releases/assets/703541930"
 provenance = "github-attestations"
 
 [tools.zizmor."platforms.windows-x64"]
-checksum = "sha256:68a6bc6888f10bf0d53658c75885e7c1b7a0588d4c1fbc3f0ca280ad7324bf06"
-url = "https://github.com/zizmorcore/zizmor/releases/download/v1.29.0/zizmor-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/zizmorcore/zizmor/releases/assets/498263142"
+checksum = "sha256:d284a16e09d9df4ce2c000357e7b59bd531be093bea5718a1ce225b449b59d49"
+url = "https://github.com/zizmorcore/zizmor/releases/download/v1.32.0/zizmor-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/zizmorcore/zizmor/releases/assets/703541929"
 provenance = "github-attestations"

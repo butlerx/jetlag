@@ -50,13 +50,7 @@ description = "Run tests"
 usage       = 'arg "[args]" var=#true help="Additional arguments passed to cargo test"'
 run         = "cargo test --all-features ${usage_args:-}"
 alias       = "t"
-sources     = [
-  "Cargo.lock",
-  "Cargo.toml",
-  "build.rs",
-  "game_modes.toml",
-  "src/**/*.rs"
-]
+sources     = ["Cargo.lock", "Cargo.toml", "build.rs", "game_modes.toml", "src/**/*.rs"]
 
 [tasks.lint]
 description = "prek: rustfmt, yew-fmt, clippy, tombi, yamlfmt, actionlint, zizmor"

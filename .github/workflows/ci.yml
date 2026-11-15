@@ -41,7 +41,7 @@ jobs:
           restore-keys: cargo-lint-${{ runner.os }}-
 
       - name: Install mise
-        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
+        uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
         with:
           experimental: true
           cache: true
@@ -67,7 +67,7 @@ jobs:
           restore-keys: cargo-test-${{ runner.os }}-
 
       - name: Install mise
-        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
+        uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
         with:
           experimental: true
           cache: true
@@ -93,7 +93,7 @@ jobs:
           restore-keys: cargo-build-${{ runner.os }}-
 
       - name: Install mise
-        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
+        uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
         with:
           experimental: true
           cache: true
