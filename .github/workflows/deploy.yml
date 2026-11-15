@@ -38,7 +38,7 @@ jobs:
           target: wasm32-unknown-unknown
           override: true
       - name: Install Trunk
-        run: cargo install trunk
+        uses: jdx/mise-action@v5
       - name: Build Yew site with Trunk
         run:
           trunk build --release --public-url /${{ github.event.repository.name

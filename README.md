@@ -46,23 +46,27 @@ arsenal:
 rustup target add wasm32-unknown-unknown
 ```
 
-**Step 3: Deploy Additional Tools** ⚡ Get your build tools ready:
-
-```bash
-cargo install trunk wasm-bindgen-cli
-```
-
-**Step 4: Infiltrate the Repository** 🕵️ Clone the secret files:
+**Step 3: Infiltrate the Repository** 🕵️ Clone the secret files:
 
 ```bash
 git clone https://github.com/butlerx/jetlag.git
 ```
 
-**Step 5: Enter the Command Center** 📍 Navigate to mission headquarters:
+**Step 4: Enter the Command Center** 📍 Navigate to mission headquarters:
 
 ```bash
 cd jetlag
 ```
+
+**Step 5: Deploy Additional Tools** ⚡ Install the pinned
+[Trunk](https://trunk-rs.github.io/trunk/) version with
+[mise](https://mise.jdx.dev):
+
+```bash
+mise install
+```
+
+_No mise? `cargo install trunk --version 0.21.14 --locked` works too._
 
 ### 🚁 Launch Your Local Command Center
 
