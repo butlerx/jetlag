@@ -67,7 +67,7 @@ fn generate_game_modes_array(config: &GameModesConfig) -> String {
         .map(generate_game_mode)
         .collect::<String>();
 
-    format!("pub static GAME_MODES: &[GameMode] = &[{game_modes_content}];\n\n",)
+    format!("pub static GAME_MODES: &[GameMode] = &[{game_modes_content}];\n\n")
 }
 
 fn generate_game_mode(game_mode: &GameMode) -> String {
@@ -122,7 +122,7 @@ fn generate_helper_functions(config: &GameModesConfig) -> String {
 }
 
 fn generate_helper_function(game_mode: &GameMode) -> String {
-    let function_name = format!("{}_mode", game_mode.title.replace("-", "_"));
+    let function_name = format!("{}_mode", game_mode.title.replace('-', "_"));
     format!(
         "pub fn {} () -> &'static GameMode {{
     GAME_MODES.iter().find(|gm| gm.title == \"{}\").expect(\"{} mode not found\")

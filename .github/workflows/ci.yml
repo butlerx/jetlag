@@ -48,6 +48,8 @@ jobs:
 
       - name: Run lints
         run: mise run ci:lint
+        env:
+          GH_TOKEN: ${{ github.token }}
 
   test:
     runs-on: ubuntu-latest
