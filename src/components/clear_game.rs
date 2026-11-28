@@ -1,4 +1,5 @@
 use crate::storage::LocalStorage;
+use wasm_bindgen::JsValue;
 use web_sys::window;
 use yew::prelude::*;
 
@@ -15,7 +16,12 @@ pub fn clear_game() -> Html {
         let show_modal = show_modal.clone();
         Callback::from(move |_| {
             LocalStorage::clear();
-            window().unwrap().location().reload().unwrap();
+            if let Err(err) = window()
+                .ok_or_else(|| JsValue::from_str("no global `window` exists"))
+                .and_then(|w| w.location().reload())
+            {
+                log::error!("failed to reload after clearing game: {err:?}");
+            }
             show_modal.set(false);
         })
     };

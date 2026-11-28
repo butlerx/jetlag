@@ -35,7 +35,7 @@ fn main() {
     let config = load_config("game_modes.toml");
     let generated_code = generate_complete_code(&config);
 
-    let out_dir = env::var("OUT_DIR").unwrap();
+    let out_dir = env::var("OUT_DIR").expect("cargo sets OUT_DIR for build scripts");
     let dest_path = Path::new(&out_dir).join("game_modes.rs");
 
     fs::write(&dest_path, generated_code).expect("Failed to write generated game modes file");

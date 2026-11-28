@@ -15,7 +15,9 @@ pub fn export_game() -> Html {
                 .filter_map(process_page)
                 .collect::<Vec<_>>()
                 .join("\n\n");
-            download_markdown(&notes, "game-data.md");
+            if let Err(err) = download_markdown(&notes, "game-data.md") {
+                log::error!("failed to export game data: {err:?}");
+            }
         })
     };
 
@@ -107,28 +109,26 @@ fn process_field(field: &Field, title: &str) -> Option<String> {
     }
 }
 
-fn download_markdown(content: &str, filename: &str) {
-    let window = window().expect("no global `window` exists");
-    let document = window.document().expect("should have a document on window");
+fn download_markdown(content: &str, filename: &str) -> Result<(), JsValue> {
+    let window = window().ok_or("no global `window` exists")?;
+    let document = window.document().ok_or("no document on window")?;
+    let body = document.body().ok_or("document has no body")?;
 
     let array = js_sys::Array::new();
     array.push(&JsValue::from_str(content));
 
     let props = web_sys::BlobPropertyBag::new();
     props.set_type("text/markdown");
-    let blob =
-        Blob::new_with_str_sequence_and_options(&array, &props).expect("Failed to create blob");
+    let blob = Blob::new_with_str_sequence_and_options(&array, &props)?;
 
-    let url = Url::create_object_url_with_blob(&blob).expect("Failed to create object URL");
+    let url = Url::create_object_url_with_blob(&blob)?;
     let a = document
-        .create_element("a")
-        .unwrap()
-        .dyn_into::<HtmlAnchorElement>()
-        .unwrap();
+        .create_element("a")?
+        .dyn_into::<HtmlAnchorElement>()?;
     a.set_href(&url);
     a.set_download(filename);
-    document.body().unwrap().append_child(&a).unwrap();
+    body.append_child(&a)?;
     a.click();
-    document.body().unwrap().remove_child(&a).unwrap();
-    Url::revoke_object_url(&url).unwrap();
+    body.remove_child(&a)?;
+    Url::revoke_object_url(&url)
 }

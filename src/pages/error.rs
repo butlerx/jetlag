@@ -4,7 +4,7 @@ use yew_router::prelude::*;
 
 #[function_component(NotFound)]
 pub fn error_page() -> Html {
-    let navigator = use_navigator().unwrap();
+    let navigator = use_navigator().expect("rendered outside a <BrowserRouter>");
 
     let go_home_button = {
         let navigator = navigator.clone();

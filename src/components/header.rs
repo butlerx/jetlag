@@ -4,7 +4,7 @@ use yew_router::prelude::*;
 
 #[function_component(Header)]
 pub fn header() -> Html {
-    let navigator = use_navigator().unwrap();
+    let navigator = use_navigator().expect("rendered outside a <BrowserRouter>");
     let onclick = Callback::from(move |_| navigator.push(&Route::Home));
     html! {
         <h1 class="header">

@@ -35,8 +35,17 @@ serde = { version = "1.0", features = ["derive"] }
 toml  = "1"
 
 [lints.clippy]
-all      = { level = "warn", priority = -1 }
-pedantic = { level = "warn", priority = -1 }
+all             = { level = "warn", priority = -1 }
+# Matters of taste: how tests check emptiness, how things are named, and match arms kept apart
+# because each is its own case in the spec.
+assert_is_empty = "allow"
+
+# `module.rs` + `module/`, never `mod.rs`.
+mod_module_files = "warn"
+pedantic         = { level = "warn", priority = -1 }
+perf             = { level = "deny", priority = -1 }
+# `.expect("why it cannot fail")` documents the invariant; a bare `.unwrap()` does not.
+unwrap_used      = "warn"
 
 [lints.rust]
 unsafe_code = "deny"
